@@ -1,0 +1,101 @@
+<html>
+<head>
+<script type="text/javascript">
+
+var slideimages = new Array() 
+slideimages[0] = new Image() 
+slideimages[0].src = "http://assets.nydailynews.com/polopoly_fs/1.2135560!/img/httpImage/image.jpg_gen/derivatives/landscape_1200/rousey4s-2-web.jpg" 
+slideimages[1] = new Image()
+slideimages[1].src = "https://cdn1.vox-cdn.com/thumbor/Lt3EyhhdmRQeamS2xVVukFottpg=/cdn0.vox-cdn.com/uploads/chorus_asset/file/4731149/137_Conor_McGregor_vs_Jose_Aldo.0.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "http://i1.mirror.co.uk/incoming/article1911564.ece/ALTERNATES/s615/158869193.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/0eb6a9c5-3dbd-4ea5-bce7-91c8ffd47f8c/fb47071ad26de67cc2e46e4702b6cbf771e881c6_original.png"
+slideimages[4] = new Image()
+slideimages[4].src = "http://2.bp.blogspot.com/-mqnmzecmFzs/UK6QLqsGsbI/AAAAAAAAAzE/rh0ftl7cnMU/s1600/bonesjones.png"
+
+</script>
+
+<style style="text/css">
+
+body
+{
+	background-repeat: no-repeat;
+	background-size:105%;
+}
+
+button
+{
+	color: #900;
+	font-weight: bold;
+	font-size: 150%;
+	text-transform: uppercase;
+	border: 2px solid #900;
+	background-color: white;
+}
+
+</style>
+
+	
+</head>
+
+<h1 style="text-align:center; color:white;">Exercise 2</h1>
+
+
+<body background="http://doughunt.co.uk/wp-content/uploads/2013/02/Opera-Background-Speaker_dark.jpg">
+
+<div align="center">
+	<img src="http://assets.nydailynews.com/polopoly_fs/1.2135560!/img/httpImage/image.jpg_gen/derivatives/landscape_1200/rousey4s-2-web.jpg" id="slide" width="1200" height="600" />
+</div>
+
+<div style="position:absolute; left:350px; top:700px;">
+<br><button type="button" onclick="slideBack()">Previous</button>
+</div>
+<div style="position:absolute; right:350px; top:715px;">
+<button type="button" onclick="slideForward()">Next</button>
+</div>
+<script type="text/javascript">
+
+
+var step=0;
+
+function slideForward(){
+ 
+	if (!document.images){
+		return;
+	}
+	
+	if (step<4){
+		step++;
+	}
+ 	else {
+  		step=0;
+	}
+
+	document.getElementById('slide').src = slideimages[step].src;
+
+}
+
+function slideBack(){
+ 
+	if (!document.images){
+		return;
+	}
+
+	if (step>0){
+		step--;
+	}
+ 	else {
+  		step=4;
+	}
+
+	document.getElementById('slide').src = slideimages[step].src;
+
+}
+
+</script>
+
+
+</body>
+</html>
+

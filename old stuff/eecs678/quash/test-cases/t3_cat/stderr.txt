@@ -1,0 +1,16 @@
+==26264== Memcheck, a memory error detector
+==26264== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==26264== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==26264== Command: /home/raviles/eecs678/quash/quash
+==26264== 
+cat: ./out.txt: No such file or directory
+diff: ./out.txt: No such file or directory
+==26264== 
+==26264== HEAP SUMMARY:
+==26264==     in use at exit: 0 bytes in 0 blocks
+==26264==   total heap usage: 43 allocs, 43 frees, 1,078,596 bytes allocated
+==26264== 
+==26264== All heap blocks were freed -- no leaks are possible
+==26264== 
+==26264== For counts of detected and suppressed errors, rerun with: -v
+==26264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

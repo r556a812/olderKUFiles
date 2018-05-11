@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Exercise3</title>
+    <meta charset="UTF-8">
+    <link href="myStyle.css"
+	rel="stylesheet"
+	type="text/css"/>
+    
+  </head>
+
+  <h1 style="text-align:center;">Exercise 3</h1>
+  <body>
+	<p style= "position:absolute; TOP: 63px; LEFT:10px; RIGHT:1608px; background-color:black; text-align:center;">Rick and Morty</p>
+	
+	<img style="position:absolute; TOP:107px; LEFT:10px; WIDTH:300px; HEIGHT:150px" src="profilePic.jpg">
+
+	<p class="links"><a href="http://www.adultswim.com/videos/rick-and-morty/">Watch Rick and Morty!</a></p>
+
+	<p style= "position:absolute; TOP: 300px; LEFT:10px; RIGHT:1500px; background-color:black;"> Rick and Morty is a cartoon series on Adult Swim.  The series features Rick, an acoholic who is a genius.  He lives with his daughter Beth and her husband Jerry.  Rick has a portal gun that he uses to travel to different dimensions and planets, bringing along with him his grandson Morty.  During these misadventures, Rick and Morty encounter many problems and see some of the wildest things, including their own death in a different dimension in one episode. The series now is in its's third season, all featured on Adult Swim. </p>
+  </body>
+</html>

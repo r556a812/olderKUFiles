@@ -1,0 +1,6 @@
+EN lab2schematic NULL H:/Lab2/Lab2Schematic.vhf sub00/vhpl00 1423066514
+EN scematictest NULL H:/Lab2/ScematicTest.vhw sub00/vhpl04 1423066089
+AR test testbench_arch H:/Lab2/test.vhw sub00/vhpl03 1423066517
+EN test NULL H:/Lab2/test.vhw sub00/vhpl02 1423066516
+AR scematictest testbench_arch H:/Lab2/ScematicTest.vhw sub00/vhpl05 1423066090
+AR lab2schematic behavioral H:/Lab2/Lab2Schematic.vhf sub00/vhpl01 1423066515

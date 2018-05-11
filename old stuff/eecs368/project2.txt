@@ -1,0 +1,409 @@
+import Data.List
+import Data.Char
+import Data.String
+
+
+
+lotusSolver:: [Int] -> [Int]
+lotusSolver board = solve board [[]] [] [] 1
+
+
+solve:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> [Int]
+solve board nextBoard nextPlace nextNum tryNum 
+	| (tryNum == 8) && (length nextBoard == 0) = board
+	| tryNum == 8 = getNextTry nextBoard nextPlace nextNum
+	| isSolved board == False = findPlace board nextBoard nextPlace nextNum tryNum
+	| isSolved board == True = board
+	
+isSolved:: [Int] -> Bool
+isSolved board 
+	| elem 0 board == True = False
+	| elem 0 board == False = True
+	
+findPlace:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> [Int]
+findPlace board nextBoard nextPlace nextNum tryNum
+	| tryNum == 8 = solve board nextBoard nextPlace nextNum 8
+	| elem tryNum (take 7 board) == False = circle1 board nextBoard nextPlace nextNum 0 tryNum
+	| elem tryNum (take 7 (drop 7 board)) == False = circle2 board nextBoard nextPlace nextNum 7 tryNum
+	| elem tryNum (take 7 (drop 14 board)) == False = circle3 board nextBoard nextPlace nextNum 14 tryNum
+	| elem tryNum (take 7 (drop 21 board)) == False = circle4 board nextBoard nextPlace nextNum 21 tryNum
+	| elem tryNum (take 7 (drop 28 board)) == False = circle5 board nextBoard nextPlace nextNum 28 tryNum
+	| elem tryNum (take 7 (drop 35 board)) == False = circle6 board nextBoard nextPlace nextNum 35 tryNum
+	| elem tryNum (drop 42 board) == False = circle7 board nextBoard nextPlace nextNum 42 tryNum
+	| otherwise = solve board nextBoard nextPlace nextNum (tryNum + 1)
+	
+circle1:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle1 board nextBoard nextPlace nextNum place tryNum
+	| place == 7 = circle2 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle2 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 4) = spiral11 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 5) = spiral12 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 6) = spiral13 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral1 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle2:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle2 board nextBoard nextPlace nextNum place tryNum
+	| place == 14 = circle3 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle3 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 11) = spiral21 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 12) = spiral22 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 13) = spiral23 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral2 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle3:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle3 board nextBoard nextPlace nextNum place tryNum
+	| place == 21 = circle4 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle4 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 19) = spiral31 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 20) = spiral32 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 14) = spiral33 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral3 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle4:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle4 board nextBoard nextPlace nextNum place tryNum
+	| place == 28 = circle5 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle5 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 26) = spiral41 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 27) = spiral42 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 21) = spiral43 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral4 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle5:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle5 board nextBoard nextPlace nextNum place tryNum
+	| place == 35 = circle6 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle6 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 34) = spiral51 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 28) = spiral52 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 29) = spiral53 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral5 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle6:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle6 board nextBoard nextPlace nextNum place tryNum
+	| place == 42 = circle7 board nextBoard nextPlace nextNum place tryNum
+	| board !! place == tryNum = circle7 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 41) = spiral61 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 35) = spiral62 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 36) = spiral63 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral6 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+circle7:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+circle7 board nextBoard nextPlace nextNum place tryNum
+	| place == 49 = findPlace board  nextBoard nextPlace nextNum (tryNum + 1)
+	| board !! place == tryNum = findPlace board nextBoard nextPlace nextNum (tryNum + 1)
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 42) = spiral71 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 43) = spiral72 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) && (place == 44) = spiral73 board nextBoard nextPlace nextNum place tryNum
+	| (board !! place == 0) && (board !! place /= tryNum) = spiral7 board nextBoard nextPlace nextNum place tryNum
+	| otherwise = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	
+spiral1:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral1 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place + 7) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 37) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 45) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral11:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral11 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place + 7) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 37) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 38) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral12:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral12 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place + 7) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 38) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral13:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral13 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place + 7) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 38) == tryNum) = circle1 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral2:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral2 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 7) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 38) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral21:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral21 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 7) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 31) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral22:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral22 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 7) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 16) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 31) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral23:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral23 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 7) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 1) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 16) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 31) == tryNum) = circle2 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+		
+spiral3:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral3 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral31:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral31 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral32:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral32 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral33:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral33 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 8) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 1) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 22) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 30) == tryNum) = circle3 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral4:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral4 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 22) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral41:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral41 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 22) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 16) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral42:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral42 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 22) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 1) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 16) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral43:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral43 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 23) == tryNum) = circle4 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+		
+spiral5:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral5 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 30) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral51:: [Int] ->  [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral51 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 30) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral52:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral52 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 23) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 16) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 1) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral53:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral53 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 23) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 16) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 7) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 15) == tryNum) = circle5 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral6:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral6 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 37) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 30) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 22) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral61:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral61 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 37) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 30) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 22) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 1) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral62:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral62 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 30) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral63:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral63 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 30) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 22) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 7) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place + 8) == tryNum) = circle6 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral7:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral7 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 45) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 38) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 30) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral71:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral71 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 38) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 31) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 16) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 1) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral72:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral72 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 38) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 31) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 16) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+	
+spiral73:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+spiral73 board nextBoard nextPlace nextNum place tryNum
+	| (board !! (place - 38) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 31) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 30) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 23) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 15) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| (board !! (place - 8) == tryNum) = circle7 board nextBoard nextPlace nextNum (place + 1) tryNum
+	| otherwise = updateBoard board nextBoard nextPlace nextNum place tryNum
+		
+updateBoard:: [Int] -> [[Int]] -> [Int] -> [Int] -> Int -> Int -> [Int]
+updateBoard board nextBoard nextPlace nextNum place tryNum = solve (take place board ++ [tryNum] ++ drop (place + 1) board) (updateNextBoard board nextBoard) (updateNextPlace place nextPlace) (updateNextNum tryNum nextNum) tryNum
+
+updateNextBoard:: [Int] -> [[Int]] -> [[Int]]
+updateNextBoard board nextBoard = [board] ++ nextBoard
+
+updateNextPlace:: Int -> [Int] -> [Int]
+updateNextPlace place nextPlace = [place] ++ nextPlace
+
+updateNextNum:: Int -> [Int] -> [Int]
+updateNextNum tryNum nextNum = [tryNum] ++ nextNum
+
+getNextTry:: [[Int]] -> [Int] -> [Int] -> [Int]
+getNextTry nextBoard nextPlace nextNum 
+	| head nextPlace > 41 = circle7 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| head nextPlace > 34 = circle6 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| head nextPlace > 27 = circle5 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| head nextPlace > 20 = circle4 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| head nextPlace > 13 = circle3 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| head nextPlace > 6 = circle2 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	| otherwise = circle1 (head nextBoard) (tail nextBoard) (tail nextPlace) (tail nextNum) ((head nextPlace) + 1) (head nextNum)
+	
+	
+validA = [5,0,0,0,1,6,0,0,0,0,3,0,0,0,7,0,6,2,1,0,0,0,1,7,0,0,6,0,0,5,0,3,6,7,2,0,0,2,1,0,0,4,0,0,4,0,0,1,0]
+answer = lotusSolver validA

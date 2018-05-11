@@ -1,0 +1,2 @@
+vhdl work "../Dflipflop/DFlipFlop.vhd"
+vhdl work "masterSlave.vhd"

@@ -1,0 +1,12 @@
+xst -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -ifn my_xor6_gate.xst -ofn my_xor6_gate.syr
+netgen -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -ar Structure -tm my_xor6_gate -w -dir netgen/synthesis -ofmt vhdl -sim my_xor6_gate.ngc my_xor6_gate_synthesis.vhd
+ngdbuild -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -dd _ngo -nt timestamp -uc "lab8Pins.ucf" -p xc3s500e-fg320-4 "my_xor6_gate.ngc" my_xor6_gate.ngd
+map -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr b -k 4 -c 100 -o my_xor6_gate_map.ncd my_xor6_gate.ngd my_xor6_gate.pcf
+par -ise "H:/EECS140Lab8/EECS140Lab8.ise" -w -intstyle ise -ol std -t 1 my_xor6_gate_map.ncd my_xor6_gate.ncd my_xor6_gate.pcf
+trce -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -e 3 -s 4 -xml my_xor6_gate my_xor6_gate.ncd -o my_xor6_gate.twr my_xor6_gate.pcf -ucf lab8Pins.ucf
+bitgen -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -f my_xor6_gate.ut my_xor6_gate.ncd
+ngdbuild -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -dd _ngo -nt timestamp -uc "lab8Pins.ucf" -p xc3s500e-fg320-4 "my_xor6_gate.ngc" my_xor6_gate.ngd
+map -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr b -k 4 -c 100 -o my_xor6_gate_map.ncd my_xor6_gate.ngd my_xor6_gate.pcf
+par -ise "H:/EECS140Lab8/EECS140Lab8.ise" -w -intstyle ise -ol std -t 1 my_xor6_gate_map.ncd my_xor6_gate.ncd my_xor6_gate.pcf
+trce -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -e 3 -s 4 -xml my_xor6_gate my_xor6_gate.ncd -o my_xor6_gate.twr my_xor6_gate.pcf -ucf lab8Pins.ucf
+bitgen -ise "H:/EECS140Lab8/EECS140Lab8.ise" -intstyle ise -f my_xor6_gate.ut my_xor6_gate.ncd

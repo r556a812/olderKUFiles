@@ -1,0 +1,16 @@
+V3 7
+FL //fileserver.eecs.ku.edu/raviles/Dflipflop/DFlipFlop.vhd 2015/04/15.10:01:33 J.36
+EN work/DFlipFlop 1429111665 \
+      FL //fileserver.eecs.ku.edu/raviles/Dflipflop/DFlipFlop.vhd \
+      PB ieee/std_logic_1164 1177545575
+AR work/DFlipFlop/Structural 1429111666 \
+      FL //fileserver.eecs.ku.edu/raviles/Dflipflop/DFlipFlop.vhd \
+      EN work/DFlipFlop 1429111665
+FL //fileserver.eecs.ku.edu/raviles/Lab11Masterslave/masterSlave.vhd 2015/04/15.10:09:04 J.36
+EN work/masterSlave 1429111667 \
+      FL //fileserver.eecs.ku.edu/raviles/Lab11Masterslave/masterSlave.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/masterSlave/Behavioral 1429111668 \
+      FL //fileserver.eecs.ku.edu/raviles/Lab11Masterslave/masterSlave.vhd \
+      EN work/masterSlave 1429111667 CP DFlipFlop

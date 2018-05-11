@@ -1,0 +1,44 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.14 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/Bit_full_adder.vhd" in Library work.
+Entity <bit_full_adder> compiled.
+Entity <bit_full_adder> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/ANDer.vhd" in Library work.
+Entity <ANDer> compiled.
+Entity <ANDer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/ORer.vhd" in Library work.
+Entity <ORer> compiled.
+Entity <ORer> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/ADDer.vhd" in Library work.
+Entity <ADDer> compiled.
+Entity <ADDer> (Architecture <Structural>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/LEDdisplay.vhd" in Library work.
+Entity <Mux4by7> compiled.
+Entity <Mux4by7> (Architecture <procedural>) compiled.
+Entity <LEDdisplay> compiled.
+Entity <LEDdisplay> (Architecture <structural>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/function_select.vhd" in Library work.
+Entity <function_select> compiled.
+Entity <function_select> (Architecture <Procedural>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/display_driver.vhd" in Library work.
+Entity <display_driver> compiled.
+Entity <display_driver> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "//fileserver.eecs.ku.edu/raviles/Lab10/toplevel.vhd" in Library work.
+Architecture behavioral of Entity toplevel is up to date.
+CPU : 1.75 / 1.89 s | Elapsed : 2.00 / 2.00 s
+ 
+--> 
+
+Total memory usage is 171320 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

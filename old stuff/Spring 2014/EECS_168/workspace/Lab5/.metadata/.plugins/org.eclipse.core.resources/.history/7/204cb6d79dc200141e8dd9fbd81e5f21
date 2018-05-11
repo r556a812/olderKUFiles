@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class SumOfDigits 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int i=0;
+		int a=0;
+		int u=0;
+		do
+		{
+		System.out.print("Please enter a No: \n");
+		i = input.nextInt();
+		
+		a = addDigits(i);
+		
+		System.out.print("\nThe sum of the digits is: " + a);
+		
+		System.out.print("\nWant to try again?(y=1/n=0) : \n");
+		u=input.nextInt();
+		}while(u!=1);
+		
+		System.out.print("\nThank you!");
+		
+		
+	}
+	public static int addDigits( int x)
+	{
+		int s=0;
+		for (int i=0; i < 5; i=i+1)
+		{
+		s=s+(x%10);
+		}
+		return s;
+	}
+}

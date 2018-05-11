@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class WordGuessingGame 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		//Declare variable
+		String w;
+		
+		System.out.print("Welcome to the word guessing game.");
+		
+		System.out.print("\nGuess a word: ");
+		
+		
+		
+		do
+		{
+			w = input.nextLine();
+			if (!(w.equals("valentine")))
+			{
+				System.out.print("Incorrect. Guess again: ");
+			}
+		}while (!(w.equals("valentine")));
+		
+		System.out.println("You win!");
+		
+	}
+
+}

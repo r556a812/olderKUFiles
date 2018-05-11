@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class ColorRange 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		//Declare the variables and constraints
+		double input;
+		
+		//Get the user input
+		System.out.println("Enter a wavelength in nm:");
+		
+		input = input.nextdouble();
+	}
+
+}

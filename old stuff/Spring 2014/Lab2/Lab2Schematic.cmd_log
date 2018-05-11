@@ -1,0 +1,3 @@
+sch2vhdl -intstyle ise -family spartan3e -flat -suppress -w "H:/Lab2/Lab2Schematic.sch" Lab2Schematic.vhf
+sch2vhdl -intstyle ise -family spartan3e -flat -suppress -w "H:/Lab2/Lab2Schematic.sch" Lab2Schematic.vhf
+sch2vhdl -intstyle ise -family spartan3e -flat -suppress -w "H:/Lab2/Lab2Schematic.sch" Lab2Schematic.vhf

@@ -1,0 +1,4 @@
+/home/raviles/eecs678/quash/test-cases/t4_builtin/sandbox
+/home/raviles/eecs678/quash/test-cases/t4_builtin/sandbox
+hello\\n 
+hello 

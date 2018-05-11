@@ -1,0 +1,3 @@
+MODULE circuit2
+	SUBMODULE circuit1
+		INSTANCE XLXI_1

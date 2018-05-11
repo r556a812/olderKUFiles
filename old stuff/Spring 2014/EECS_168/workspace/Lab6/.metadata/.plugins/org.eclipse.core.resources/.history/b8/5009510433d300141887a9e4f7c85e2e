@@ -1,0 +1,82 @@
+import java.util.Scanner;
+public class array 
+{
+	public static void main(String[] args)
+	{
+		//Declare variables
+		Scanner kb = new Scanner (System.in);
+		int size = 0;
+		int num [] = null;
+		
+		//Do statement to make sure the user inputs a number greater than 1
+		do
+		{
+		System.out.print( "Input an array size: ");
+		size = kb.nextInt();
+		}while (size<=0);
+		
+		num = new int [size];
+		
+		System.out.println("Now please enter " + size + " numbers");
+		
+		for (int i=0; i<size; i++)
+		{
+			System.out.print("Input a number into your array: ");
+			num [i]=kb.nextInt();
+		}
+		
+
+		
+		
+		System.out.println("Here are all the numbers in your array:" );
+		for (int i=0; i<size; i++)
+		{
+			System.out.println(num [i]);
+		}
+		
+		
+		int sum=0;
+		for (int i=0; i<size; i++)
+		{
+			sum=sum+num[i];
+			
+		}
+		
+		System.out.println("The sum of all the values is: " + sum);
+		
+		
+		
+		
+		System.out.println("The average of all the values is: " + (sum/size));
+		
+		int max=0;
+		for (int i=0; i<size; i++)
+		{
+			if (max<num[i])
+			{
+				max=num[i];
+			}
+			
+		}
+		
+		System.out.println("The largest value is: " + max);
+		
+		int min=sum;
+		for (int i=0; i<size; i++)
+		{
+			if (min>num[i])
+			{
+				min=num[i];
+			}
+			
+		}
+		
+		System.out.println("The smallest value is: " + min);
+		
+		
+		
+
+	}
+	
+
+}

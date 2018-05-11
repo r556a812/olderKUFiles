@@ -1,0 +1,109 @@
+
+**** Build of configuration Debug for project EECS_388_FreeRTOS ****
+
+"C:\\TI_CodeComposer\\ccsv6\\utils\\bin\\gmake" -k -j 8 all 
+'Building file: ../main.c'
+'Building file: ../targetConfigs/lm3s1968_startup_ccs.c'
+'Building file: ../src/led.c'
+'Building file: ../src/oled.c'
+'Building file: ../src/system.c'
+'Building file: H:/EECS_388/TI_CCS_Archive/OLED_Driver/rit128x96x4.c'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/croutine.c'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/event_groups.c'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="targetConfigs/lm3s1968_startup_ccs.pp" --obj_directory="targetConfigs"  "../targetConfigs/lm3s1968_startup_ccs.c"
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/led.pp" --obj_directory="src"  "../src/led.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/oled.pp" --obj_directory="src"  "../src/oled.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/system.pp" --obj_directory="src"  "../src/system.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/OLED_Driver/rit128x96x4.pp" --obj_directory="src/OLED_Driver"  "H:/EECS_388/TI_CCS_Archive/OLED_Driver/rit128x96x4.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/croutine.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/croutine.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/event_groups.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/event_groups.c"
+'Finished building: ../targetConfigs/lm3s1968_startup_ccs.c'
+' '
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/list.c'
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/list.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/list.c"
+'Finished building: ../main.c'
+' '
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/queue.c'
+'Finished building: ../src/led.c'
+'Invoking: ARM Compiler'
+' '
+'Finished building: ../src/system.c'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/queue.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/queue.c"
+'Finished building: H:/EECS_388/TI_CCS_Archive/OLED_Driver/rit128x96x4.c'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/tasks.c'
+'Finished building: ../src/oled.c'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/croutine.c'
+' '
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/list.c'
+' '
+'Invoking: ARM Compiler'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/event_groups.c'
+' '
+' '
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/timers.c'
+' '
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/port.c'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/tasks.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/tasks.c"
+' '
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.s'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/port.c'
+'Invoking: ARM Compiler'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/portasm.s'
+'Invoking: ARM Compiler'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/port.c'
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/timers.pp" --obj_directory="src/FreeRTOS"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/timers.c"
+'Invoking: ARM Compiler'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/queue.c'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS6/ARM_CM4F/port.pp" --obj_directory="src/FreeRTOS/portable/CCS6/ARM_CM4F"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/port.c"
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.pp" --obj_directory="src/FreeRTOS/portable/CCS6/ARM_CM4F"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.s"
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS6/ARM_CM3/port.pp" --obj_directory="src/FreeRTOS/portable/CCS6/ARM_CM3"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/port.c"
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS6/ARM_CM3/portasm.pp" --obj_directory="src/FreeRTOS/portable/CCS6/ARM_CM3"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/portasm.s"
+' '
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS5/ARM_CM3/port.pp" --obj_directory="src/FreeRTOS/portable/CCS5/ARM_CM3"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/port.c"
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/portasm.s'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/port.c'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.s'
+'Invoking: ARM Compiler'
+' '
+' '
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/portasm.s'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/portable/CCS5/ARM_CM3/portasm.pp" --obj_directory="src/FreeRTOS/portable/CCS5/ARM_CM3"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/portasm.s"
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/port.c'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS/include/heap_2.c'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/tasks.c'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/timers.c'
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS6/ARM_CM3/port.c'
+' '
+' '
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/portable/CCS5/ARM_CM3/portasm.s'
+'Invoking: ARM Compiler'
+' '
+' '
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_FreeRTOS/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS/include/heap_2.pp" --obj_directory="src/FreeRTOS/include"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS/include/heap_2.c"
+' '
+' '
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS/include/heap_2.c'
+' '
+'Building target: EECS_388_FreeRTOS.out'
+'Invoking: ARM Linker'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full -z -m"EECS_388_FreeRTOS.map" --heap_size=4096 --stack_size=4096 -i"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/lib" -i"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --reread_libs --warn_sections --display_error_number --emit_warnings_as_errors --xml_link_info="EECS_388_FreeRTOS_linkInfo.xml" --rom_model -o "EECS_388_FreeRTOS.out" "./main.obj" "./targetConfigs/lm3s1968_startup_ccs.obj" "./src/led.obj" "./src/oled.obj" "./src/system.obj" "./src/OLED_Driver/rit128x96x4.obj" "./src/FreeRTOS/croutine.obj" "./src/FreeRTOS/event_groups.obj" "./src/FreeRTOS/list.obj" "./src/FreeRTOS/queue.obj" "./src/FreeRTOS/tasks.obj" "./src/FreeRTOS/timers.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM4F/port.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM3/port.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM3/portasm.obj" "./src/FreeRTOS/portable/CCS5/ARM_CM3/port.obj" "./src/FreeRTOS/portable/CCS5/ARM_CM3/portasm.obj" "./src/FreeRTOS/include/heap_2.obj" "../targetConfigs/lm3s1968.cmd"  -l"libc.a" -l"C:\TI_CodeComposer\StellarisWare-LM3S1968\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" 
+<Linking>
+'Finished building target: EECS_388_FreeRTOS.out'
+' '
+"C:/TI_CodeComposer/ccsv6/utils/tiobj2bin/tiobj2bin" "EECS_388_FreeRTOS.out" "EECS_388_FreeRTOS.bin" "C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armofd" "C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armhex" "C:/TI_CodeComposer/ccsv6/utils/tiobj2bin/mkhex4bin"
+' '
+
+**** Build Finished ****

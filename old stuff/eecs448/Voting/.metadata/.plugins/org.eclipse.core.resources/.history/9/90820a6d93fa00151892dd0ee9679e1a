@@ -1,0 +1,123 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.Component;
+import java.awt.GridLayout;
+
+public class Voting {
+	
+	private JPanel panel;
+	private JPanel panel2;
+	private JButton vote1;
+	private JButton vote2;
+	private JButton vote3;
+	private JButton vote4;
+	private JTextField first;
+	private JTextField last;
+	private JLabel label;
+	
+	
+	public Voting()
+	{
+		panel = new JPanel();
+		vote1 = new JButton("Me");
+		vote2 = new JButton("You");
+		vote3 = new JButton("Him");
+		vote4 = new JButton("Her");
+		first = new JTextField(3);//3 cols, not 20 chars
+		last = new JTextField(3);//3 cols, not 20 chars
+		label = new JLabel("Enter First and Last Name, then select candidate of choice");
+		
+		//Load the listener
+		vote1.addActionListener(vote1Listener());
+		vote2.addActionListener(vote2Listener());
+		vote3.addActionListener(vote3Listener());
+		vote4.addActionListener(vote4Listener());
+		
+		//load the panel
+		panel.add(first);
+		panel.add(last);
+		panel.add(vote1);
+		panel.add(vote2);
+		panel.add(vote3);
+		panel.add(vote4);
+		panel.add(label);
+	}
+	
+	public Component getContent()
+	{
+		return (panel);
+	}
+	
+	private ActionListener vote1Listener()
+	{
+		ActionListener listener = new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String inputFirst = first.getText();
+				String inputLast = last.getText();
+				
+				
+				
+				
+			}
+		};
+		
+		return listener;
+	}
+	
+	private ActionListener vote2Listener()
+	{
+		ActionListener listener = new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String inputFirst = first.getText();
+				String inputLast = last.getText();
+				
+				
+				
+				
+			}
+		};
+		
+		return listener;
+	}
+	
+	private ActionListener vote3Listener()
+	{
+		ActionListener listener = new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String inputFirst = first.getText();
+				String inputLast = last.getText();
+				
+				
+				
+				
+			}
+		};
+		
+		return listener;
+	}
+	
+	private ActionListener vote4Listener()
+	{
+		ActionListener listener = new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String inputFirst = first.getText();
+				String inputLast = last.getText();
+				
+				
+				
+				
+			}
+		};
+		
+		return listener;
+	}
+}
+	

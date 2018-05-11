@@ -1,0 +1,27 @@
+struct sem_rec *ccand(struct sem_rec *e1, int m, struct sem_rec *e2)
+{
+}
+
+struct sem_rec *ccor(struct sem_rec *e1, int m, struct sem_rec *e2)
+{
+}
+
+struct sem_rec *ccnot(struct sem_rec *e)
+{
+}
+
+struct sem_rec *opb(char *op, struct sem_rec *x, struct sem_rec *y)
+{
+   fprintf(stderr, "sem: opb not implemented\n");
+   return ((struct sem_rec *) NULL);
+}
+
+void labeldcl(char *id)
+{
+
+}
+
+void dogoto(char *id)
+{
+
+}

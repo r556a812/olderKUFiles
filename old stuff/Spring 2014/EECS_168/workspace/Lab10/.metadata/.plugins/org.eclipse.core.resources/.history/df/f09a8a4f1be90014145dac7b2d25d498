@@ -1,0 +1,120 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class letterCounter 
+{
+	public static void main(String[] args)
+	{
+		Scanner kb = new Scanner(System.in);
+		String file=null;
+		String outFile=null;
+		FileWriter fWriter=null;
+		BufferedWriter bWriter=null;
+		FileReader fReader = null;
+		BufferedReader bReader = null;
+	
+		do
+		{
+			try
+			{
+			System.out.print("Input a file name: ");
+			file=kb.nextLine();
+			fReader = new FileReader(file);
+			bReader = new BufferedReader(fReader);
+			}
+			catch (Exception e)
+			{
+				System.out.println("Invalid filename given. Input another.");
+				file=null;
+			}
+		} while (file==null);
+		
+		
+		
+		do
+		{
+			
+		
+		try
+		{
+		System.out.print("\nInput an out file name:");
+		outFile=kb.nextLine();
+		fWriter = new FileWriter(outFile);
+		bWriter = new BufferedWriter(fWriter);
+		}
+		catch (Exception e)
+		{
+			System.out.println("Invalid filename given. Input another.");
+			outFile=null;
+		}
+		
+		}while (outFile==null);
+		
+		System.out.println("\nReading from " + file );
+		
+		int [] letterArray = new int[52];
+		for (int i =0; i<52; i++)
+		{
+			letterArray[i]=0;
+		}
+		
+		try
+		{
+		String line;
+		line = bReader.readLine();
+		
+		while (line!=null)
+		{
+			for (int r=0; r<line.length(); r++)
+			{
+				
+				if ((int)line.charAt(r)>=65 && (int)line.charAt(r)<=90)
+				{
+					
+					letterArray[(int)line.charAt(r)-65]+=1;
+				}
+				if ((int)line.charAt(r)>=97 && (int)line.charAt(r)<=122)
+				{
+					letterArray[(int)line.charAt(r)-71]+=1;
+				}
+			}
+			bWriter.write(line);
+			System.out.println(line);
+			line = bReader.readLine();
+		}
+		
+		bReader.close();
+		bWriter.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+	System.out.println("Results are stored in " + outFile);
+	
+	
+		for (char ch='A'; ch<='Z'; ch++)
+		{
+			int arrayNumber = (int)ch;
+			System.out.println(ch + "="+letterArray[arrayNumber-65]);
+		
+		}
+		
+		for (char ch='a'; ch<='z'; ch++)
+		{
+			int arrayNumber = (int)ch;
+			System.out.println(ch + "="+letterArray[arrayNumber-71]);
+		
+		}
+		
+		
+		
+		
+		
+	}
+
+}

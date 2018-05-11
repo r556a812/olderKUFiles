@@ -1,0 +1,23 @@
+import java.lang.Math;
+public class Hypotenuse 
+{
+	public static void main(String[] args)
+	{
+	//Math class.
+	double answer = 0.0;
+	double a = 0.0;
+	double b = 0.0;
+	
+	System.out.println("Will use the formula a^2 + b^2 = c^2 to solve for the hypotenuse of a triangle.");
+	System.out.println("Input a value for a:");
+	
+	a = input.nextDouble();
+	
+	System.out.println("Input a value for b:");
+	
+	b = input.nextDouble();
+	}
+	
+	
+
+}

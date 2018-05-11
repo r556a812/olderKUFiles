@@ -1,0 +1,23 @@
+V3 15
+FL H:/Lab2/Lab2Schematic.vhf 2015/02/04.10:15:10 J.36
+EN work/Lab2Schematic 1423066514 FL H:/Lab2/Lab2Schematic.vhf \
+      PB ieee/std_logic_1164 1179176983 PB ieee/NUMERIC_STD 1179176997 LB UNISIM \
+      PH unisim/VCOMPONENTS 1179177362
+AR work/Lab2Schematic/BEHAVIORAL 1423066515 \
+      FL H:/Lab2/Lab2Schematic.vhf EN work/Lab2Schematic 1423066514 CP AND3 CP AND2 \
+      CP OR3 CP INV
+FL H:/Lab2/ScematicTest.vhw 2015/02/04.10:01:41 J.36
+EN work/ScematicTest 1423066089 FL H:/Lab2/ScematicTest.vhw LB UNISIM \
+      PH unisim/VCOMPONENTS 1179177362 PB ieee/std_logic_1164 1179176983 \
+      PB ieee/NUMERIC_STD 1179176997 PB ieee/STD_LOGIC_TEXTIO 1179176993 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991 \
+      PB std/textio 1179176969
+AR work/ScematicTest/testbench_arch 1423066090 \
+      FL H:/Lab2/ScematicTest.vhw EN work/ScematicTest 1423066089 CP Lab2Schematic
+FL H:/Lab2/test.vhw 2015/02/04.10:12:32 J.36
+EN work/test 1423066516 FL H:/Lab2/test.vhw LB UNISIM PH unisim/VCOMPONENTS 1179177362 \
+      PB ieee/std_logic_1164 1179176983 PB ieee/NUMERIC_STD 1179176997 \
+      PB ieee/STD_LOGIC_TEXTIO 1179176993 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991 PB std/textio 1179176969
+AR work/test/testbench_arch 1423066517 \
+      FL H:/Lab2/test.vhw EN work/test 1423066516 CP Lab2Schematic

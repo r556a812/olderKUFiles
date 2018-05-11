@@ -1,0 +1,49 @@
+/*
+ * uartSend.c
+ *
+ *  Created on: Apr 21, 2016
+ *      Author: raviles
+ */
+
+#include "system.h"
+#include "uartSend.h"
+#include "driverlib/adc.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/gpio.h"
+
+#include "capacitor.h"
+
+#include "queue.h"
+#include "utils/uartstdio.h"
+
+void UARTTask(void* pvParameter)
+{
+
+	int a = 0;
+	unsigned long val1;
+
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+
+	UARTStdioInit(0);
+	UARTprintf("UART Initiated");
+
+
+	while (true) {
+		if (UART_trigger == 1) {
+			a = 0;
+			UART_trigger=0;
+			while (a < 100)
+			{
+				xQueueReceive(queue1, &val1, 0);
+				UARTprintf("%d\r\n", val1);
+				a++;
+			}
+
+		}
+		vTaskDelay(ONE_MS*1000);
+	}
+
+
+}

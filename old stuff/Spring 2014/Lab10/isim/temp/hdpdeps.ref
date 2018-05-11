@@ -1,0 +1,55 @@
+V3 42
+FL H:/Lab10/ADDer.vhd 2015/04/08.10:08:35 J.36
+EN isim_temp/ADDer 1428506493 FL H:/Lab10/ADDer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/ADDer/Structural 1428506494 \
+      FL H:/Lab10/ADDer.vhd EN isim_temp/ADDer 1428506493 CP bit_full_adder
+FL H:/Lab10/ANDer.vhd 2015/04/08.10:09:48 J.36
+EN isim_temp/ANDer 1428506487 FL H:/Lab10/ANDer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/ANDer/Behavioral 1428506488 \
+      FL H:/Lab10/ANDer.vhd EN isim_temp/ANDer 1428506487
+FL H:/Lab10/Bit_full_adder.vhd 2015/04/08.10:20:43 J.36
+EN isim_temp/bit_full_adder 1428506485 FL H:/Lab10/Bit_full_adder.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/bit_full_adder/Behavioral 1428506486 \
+      FL H:/Lab10/Bit_full_adder.vhd EN isim_temp/bit_full_adder 1428506485
+FL H:/Lab10/display_driver.vhd 2015/04/08.10:09:17 J.36
+EN isim_temp/display_driver 1428506501 FL H:/Lab10/display_driver.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/display_driver/Behavioral 1428506502 \
+      FL H:/Lab10/display_driver.vhd EN isim_temp/display_driver 1428506501
+FL H:/Lab10/function_select.vhd 2015/04/08.10:07:45 J.36
+EN isim_temp/function_select 1428506499 FL H:/Lab10/function_select.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/function_select/Procedural 1428506500 \
+      FL H:/Lab10/function_select.vhd EN isim_temp/function_select 1428506499
+FL H:/Lab10/LEDdisplay.vhd 2015/04/08.10:04:35 J.36
+EN isim_temp/Mux4by7 1428506495 FL H:/Lab10/LEDdisplay.vhd PB ieee/std_logic_1164 1179176983 \
+      LB UNISIM PH unisim/VCOMPONENTS 1179177362
+AR isim_temp/Mux4by7/procedural 1428506496 \
+      FL H:/Lab10/LEDdisplay.vhd EN isim_temp/Mux4by7 1428506495 CP MUXF5 CP MUXF6
+EN isim_temp/LEDdisplay 1428506497 \
+      FL H:/Lab10/LEDdisplay.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991 LB UNISIM PH unisim/VCOMPONENTS 1179177362
+AR isim_temp/LEDdisplay/structural 1428506498 \
+      FL H:/Lab10/LEDdisplay.vhd EN isim_temp/LEDdisplay 1428506497 CP Mux4by7
+FL H:/Lab10/ORer.vhd 2015/04/08.10:05:35 J.36
+EN isim_temp/ORer 1428506489 FL H:/Lab10/ORer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/ORer/Behavioral 1428506490 \
+      FL H:/Lab10/ORer.vhd EN isim_temp/ORer 1428506489
+FL H:/Lab10/toplevel.vhd 2015/04/08.10:20:53 J.36
+EN isim_temp/toplevel 1428506503 FL H:/Lab10/toplevel.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/toplevel/Behavioral 1428506504 \
+      FL H:/Lab10/toplevel.vhd EN isim_temp/toplevel 1428506503 CP ANDer CP ORer \
+      CP XORer CP ADDer CP LEDdisplay CP function_select CP display_driver
+FL H:/Lab10/XORer.vhd 2015/04/08.10:06:31 J.36
+EN isim_temp/XORer 1428506491 FL H:/Lab10/XORer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR isim_temp/XORer/Behavioral 1428506492 \
+      FL H:/Lab10/XORer.vhd EN isim_temp/XORer 1428506491

@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class MethodPractice 
+{
+	
+	
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		int x=0;
+		int y=0;
+		int i=0;
+		int m;
+		System.out.print("Input two numbers: ");
+		
+		while (i<2)
+		{
+			if(i==0)
+			{
+			x = input.nextInt();
+			}
+			if (i==1)
+			{
+				y = input.nextInt();
+			}
+			i=i+1;
+		}
+	
+		m = max(x,y);
+		
+		System.out.print("The max of " + x + " and " + y + " is: " + m);
+	}
+	
+
+		public static int max(int a, int b)
+		{
+			if (a>b)
+			{
+				return a;
+			}
+			if (b>a)
+			{
+				return b;
+			}
+//			return b;
+		}
+}
+
+

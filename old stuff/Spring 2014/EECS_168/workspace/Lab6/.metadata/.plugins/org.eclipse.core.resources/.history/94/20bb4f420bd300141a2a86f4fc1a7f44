@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class array 
+{
+	public static void main(String[] args)
+	{
+		Scanner kb = new Scanner (System.in);
+		int x = 0;
+		int num [] = new int [x];
+		
+		do
+		{
+		System.out.println( "Input an array size:");
+		x = kb.nextInt();
+		}while (x<=0);
+		
+		for (int i=0; i<x; i++)
+		{
+			System.out.println("Input a number into your array");
+			num [i]=kb.nextInt();
+		}
+		
+		
+		
+
+	}
+
+}

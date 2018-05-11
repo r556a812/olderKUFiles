@@ -1,0 +1,17 @@
+
+public class GameDriver 
+{
+	public static void main(String[] args)
+	{
+		HangMan game=new HangMan();
+		
+		System.out.println("Welcome to the Hangman Game!\n----------------------------");
+
+		
+		
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SquareMatrix 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int size;
+		
+		System.out.print("Enter the Size of the Square Matrix: \n");
+		size = input.nextInt();
+		int multiple=0;
+		System.out.print("Square Matrix: \n");
+		
+		for (int o=1; o<=size; o=o+1)
+		{
+			for (int i=1; i<=size; i=i+1)
+			{
+				System.out.print(i+multiple + " ");
+			}
+			System.out.print("\n");
+			multiple=size+multiple;
+		}
+	}
+
+}

@@ -1,0 +1,66 @@
+import java.util.Scanner;
+public class KUStudentTest 
+{
+	public static void main(String[] args)
+	{
+		Scanner kb=new Scanner(System.in);
+		String name="";
+		String ku="";
+		String fname="";
+		String lname="";
+		String kuid="";
+		String dpt="";
+		int n=0;
+		int k=0;
+		
+		System.out.println("Please input the student's name (first name last name): ");
+		name=kb.nextLine();
+		
+		for (int i=0; i<name.length(); i++)
+		{
+			if (name.charAt(i)==' ')
+			{
+				n=i;
+			}
+		}
+		
+		for (int i=0; i<n; i++)
+		{
+			fname+=name.charAt(i);
+		}
+		
+		for (int i=n; i<name.length(); i++)
+		{
+			lname+=name.charAt(i);
+		}
+		
+		
+		KUStudent one = new KUStudent();
+		one.set_name(fname, lname);
+		
+		
+		System.out.println("Please input the student's KUID and department: ");
+		ku=kb.nextLine();
+		
+		for (int i=0; i<ku.length(); i++)
+		{
+			if (ku.charAt(i)==' ')
+			{
+				k=i;
+			}
+		}
+		
+		for (int i=0; i<k; i++)
+		{
+			kuid+=ku.charAt(i);
+		}
+		
+		for (int i=k; i<ku.length(); i++)
+		{
+			dpt+=ku.charAt(i);
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,352 @@
+import Data.List
+import Data.Char
+import Data.String
+import Data.Maybe
+
+lotusSolver:: [Int] -> [Int]															
+lotusSolver board =
+	if (elemIndex 0 board)
+		then board
+	else (nums board (findPlace board (elemIndex 0 board) 1) (elemIndex 0 board))
+	
+solve:: [Int] -> Int -> Int -> [Int]
+solve board index numTry =
+	if (elemIndex 0 board == Nothing)
+		then (board)
+	else (lotusSolver (take index board ++ [tryNum] ++ drop (index + 1) board))
+
+nums:: [Int] -> [Int] -> Int -> [Int]
+nums _ [] _ = []
+nums board (x:xs) index = 
+	if ((solve board index x) == []) 
+		then (nums board xs index ) 
+	else (solve board index x)
+	
+								
+findPlace:: [Int] -> Int -> Int -> [Int]
+findPlace board index tryNum = 
+	if (tryNum < 8)
+		then if (index < 7 )
+			then if (circle1 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 14)
+			then if (circle2 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 21)
+			then if(circle3 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 28)
+			then if (circle4 board index tryNumm)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 35)
+			then if (circle5 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 42)
+			then if (circle6 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+		else if (index < 49)
+			then if (circle7 board index tryNum)
+				then (findPlace board index (tryNum + 1) ++ [tryNum])
+			else (findPlace board index (tryNum + 1))
+	else []
+	
+	
+	
+circle1:: [Int] -> Int -> Int -> Bool
+circle1 board index tryNum = 
+	if (elem tryNum (take 7 board) == False)
+		then if (index == 4)
+			then (spiral11 board index tryNum)
+		else if (index == 5)
+			then (spiral12 board index tryNum)
+		else if (index == 6)
+			then (spiral13 board index tryNum)
+		else (spiral1 board index tryNum)
+	else (False)
+				
+	
+circle2:: [Int] -> Int -> Int -> Bool
+circle2 board index tryNum = 
+	if (elem tryNum (take 7 (drop 7 board)) == False)
+		then if (index == 11)
+			then spiral21 board index tryNum
+		else if (index == 12)
+			then spiral22 board index tryNum
+		else if (index == 13)
+			then spiral23 board index tryNum
+		else spiral2 board index tryNum
+	else False
+	
+circle3:: [Int] -> Int -> Int -> Bool
+circle3 board index tryNum = 
+	if (elem tryNum (take 7 board) == False)
+		then if (index == 19)
+			then spiral31 board index tryNum
+		else if (index == 20)
+			then spiral32 board index tryNum
+		else if (index == 14)
+			then spiral33 board index tryNum
+		else spiral3 board index tryNum
+	else False
+	
+circle4:: [Int] -> Int -> Int -> Bool
+circle4 board index tryNum = 
+	if (elem tryNum (take 7 (drop 14 board)) == False)
+		then if (index == 26)
+			then spiral41 board index tryNum
+		else if (index == 27)
+			then spiral42 board index tryNum
+		else if (index == 21)
+			then spiral43 board index tryNum
+		else spiral4 board index tryNum
+	else False
+	
+circle5:: [Int] -> Int -> Int -> Bool
+circle5 board index tryNum = 
+	if (elem tryNum (take 7 (drop 21 board)) == False)
+		then if (index == 34)
+			then spiral51 board index tryNum
+		else if (index == 28)
+			then spiral52 board index tryNum
+		else if (index == 29)
+			then spiral53 board index tryNum
+		else spiral5 board index tryNum
+	else False
+	
+circle6:: [Int] -> Int -> Int -> Bool
+circle6 board index tryNum = 
+	if (elem tryNum (take 7 (drop 28 board)) == False)
+		then if (index == 41)
+			then spiral61 board index tryNum
+		else if (index == 35)
+			then spiral62 board index tryNum
+		else if (index == 36)
+			then spiral63 board index tryNum
+		else spiral6 board index tryNum
+	else False
+	
+circle7:: [Int] -> Int -> Int -> Bool
+circle7 board index tryNum = 
+	if (elem tryNum (drop 42 board) == False)
+		then if (index == 42)
+			then spiral71 board index tryNum
+		else if (index == 43)
+			then spiral72 board index tryNum
+		else if (index == 44)
+			then spiral73 board index tryNum
+		else spiral7 board index tryNum
+	else False
+
+
+spiral1:: [Int] -> Int -> Int -> Bool
+spiral1 board index tryNum = 
+	if ((board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 37) /= tryNum) && (board !! (index + 45) /= tryNum))
+		then True
+	else False
+	
+	
+spiral11:: [Int] -> Int -> Int -> Bool
+spiral11 board index tryNum = 
+	if ((board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 37) /= tryNum) && (board !! (index + 38) /= tryNum))
+		then True
+	else False
+
+	
+spiral12:: [Int] -> Int -> Int -> Bool
+spiral12 board index tryNum = 
+	if ((board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 38) /= tryNum))
+		then True
+	else False
+
+	
+spiral13:: [Int] -> Int -> Int -> Bool
+spiral13 board index tryNum = 
+	if ((board !! (index + 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 38) /= tryNum))
+		then True
+	else False
+
+	
+spiral2:: [Int] -> Int -> Int -> Bool
+spiral2 board index tryNum = 
+	if ((board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 38) /= tryNum))
+		then True
+	else False
+
+	
+spiral21:: [Int] -> Int -> Int -> Bool
+spiral21 board index tryNum = 
+	if ((board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 30) /= tryNum) && (board !! (index + 31) /= tryNum))
+		then True
+	else False
+
+	
+spiral22:: [Int] -> Int -> Int -> Bool
+spiral22 board index tryNum = 
+	if ((board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 16) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 31) /= tryNum))
+		then True
+	else False
+
+
+	
+spiral23:: [Int] -> Int -> Int -> Bool
+spiral23 board index tryNum = 
+	if ((board !! (index - 7) /= tryNum) && (board !! (index + 1) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 16) /= tryNum) && (board !! (index + 23) /= tryNum) && (board !! (index + 31) /= tryNum))
+		then True
+	else False
+
+		
+spiral3:: [Int] -> Int -> Int -> Bool
+spiral3 board index tryNum = 
+	if ((board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 30) /= tryNum))
+		then True
+	else False
+
+	
+spiral31:: [Int] -> Int -> Int -> Bool
+spiral31 board index tryNum = 
+	if ((board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 23) /= tryNum))
+		then True
+	else False
+
+	
+spiral32:: [Int] -> Int -> Int -> Bool
+spiral32 board index tryNum = 
+	if ((board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum))
+		then True
+	else False
+
+	
+spiral33:: [Int] -> Int -> Int -> Bool
+spiral33 board index tryNum = 
+	if ((board !! (index - 8) /= tryNum) && (board !! (index - 1) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 22) /= tryNum) && (board !! (index + 30) /= tryNum))
+		then True
+	else False
+
+	
+spiral4:: [Int] -> Int -> Int -> Bool
+spiral4 board index tryNum = 
+	if ((board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum))
+		then True
+	else False
+
+	
+spiral41:: [Int] -> Int -> Int -> Bool
+spiral41 board index tryNum = 
+	if ((board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 16) /= tryNum))
+		then True
+	else False
+
+	
+spiral42:: [Int] -> Int -> Int -> Bool
+spiral42 board index tryNum = 
+	if ((board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 1) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 16) /= tryNum))
+		then True
+	else False
+
+	
+spiral43:: [Int] -> Int -> Int -> Bool
+spiral43 board index tryNum = 
+	if ((board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum) && (board !! (index + 15) /= tryNum) && (board !! (index + 23) /= tryNum))
+		then True
+	else False
+
+		
+spiral5:: [Int] -> Int -> Int -> Bool
+spiral5 board index tryNum = 
+	if ((board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum))
+		then True
+	else False
+
+	
+spiral51:: [Int] -> Int -> Int -> Bool
+spiral51 board index tryNum = 
+	if ((board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 8) /= tryNum))
+		then True
+	else False
+
+	
+spiral52:: [Int] -> Int -> Int -> Bool
+spiral52 board index tryNum = 
+	if ((board !! (index - 23) /= tryNum) && (board !! (index - 16) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index - 1) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum))
+		then True
+	else False
+
+
+spiral53:: [Int] -> Int -> Int -> Bool
+spiral53 board index tryNum = 
+	if ((board !! (index - 23) /= tryNum) && (board !! (index - 16) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index + 7) /= tryNum) && (board !! (index + 15) /= tryNum))
+		then True
+	else False
+
+	
+spiral6:: [Int] -> Int -> Int -> Bool
+spiral6 board index tryNum = 
+	if ((board !! (index - 37) /= tryNum) && (board !! (index - 30) /= tryNum) && (board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum))
+		then True
+	else False
+
+	
+spiral61:: [Int] -> Int -> Int -> Bool
+spiral61 board index tryNum = 
+	if ((board !! (index - 37) /= tryNum) && (board !! (index - 30) /= tryNum) && (board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 1) /= tryNum))
+		then True
+	else False
+
+	
+spiral62:: [Int] -> Int -> Int -> Bool
+spiral62 board index tryNum = 
+	if ((board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum))
+		then True
+	else False
+
+
+	
+spiral63:: [Int] -> Int -> Int -> Bool
+spiral63 board index tryNum = 
+	if ((board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 22) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 7) /= tryNum) && (board !! (index + 8) /= tryNum))
+		then True
+	else False
+
+	
+spiral7:: [Int] -> Int -> Int -> Bool
+spiral7 board index tryNum = 
+	if ((board !! (index - 45) /= tryNum) && (board !! (index - 38) /= tryNum) && (board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum))
+		then True
+	else False
+
+	
+spiral71:: [Int] -> Int -> Int -> Bool
+spiral71 board index tryNum = 
+	if ((board !! (index - 38) /= tryNum) && (board !! (index - 31) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 16) /= tryNum) && (board !! (index - 8) /= tryNum) && (board !! (index - 1) /= tryNum))
+		then True
+	else False
+
+	
+spiral72:: [Int] -> Int -> Int -> Bool
+spiral72 board index tryNum = 
+	if ((board !! (index - 38) /= tryNum) && (board !! (index - 31) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 16) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum))
+		then True
+	else False
+
+	
+spiral73:: [Int] -> Int -> Int -> Bool
+spiral73 board index tryNum = 
+	if ((board !! (index - 38) /= tryNum) && (board !! (index - 31) /= tryNum) && (board !! (index - 30) /= tryNum) && (board !! (index - 23) /= tryNum) && (board !! (index - 15) /= tryNum) && (board !! (index - 8) /= tryNum))
+		then True
+	else False
+
+							
+							
+							
+validA = [5,0,0,0,1,6,0,0,0,0,3,0,0,0,7,0,6,2,1,0,0,0,1,7,0,0,6,0,0,5,0,3,6,7,2,0,0,2,1,0,0,4,0,0,4,0,0,1,0]
+answer = lotusSolver validA	
+							
+							
+							
+							

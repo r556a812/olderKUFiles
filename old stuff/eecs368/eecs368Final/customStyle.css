@@ -1,0 +1,23 @@
+h1 {
+	
+	color: black;
+	font-size: 300%;
+
+}
+
+p1{
+
+    position: relative;
+            top:100px;
+            left:400px;           
+        
+}
+
+p2{
+
+    position: relative;
+            top:200px;
+            left:400px;
+
+}
+

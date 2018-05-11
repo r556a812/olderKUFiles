@@ -1,0 +1,5 @@
+V3 3
+FL H:/Dflipflop/DFlipFlop.vhd 2015/04/15.09:39:44 J.36
+EN work/RSLatch 1429108808 FL H:/Dflipflop/DFlipFlop.vhd PB ieee/std_logic_1164 1179176983
+AR work/RSLatch/Structural 1429108809 \
+      FL H:/Dflipflop/DFlipFlop.vhd EN work/RSLatch 1429108808

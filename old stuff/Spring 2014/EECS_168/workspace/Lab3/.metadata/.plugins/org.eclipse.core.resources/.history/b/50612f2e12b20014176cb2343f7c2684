@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class ColorRange 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		//Declare the variables and constraints.
+		double wavelength;
+		
+		System.out.println("Enter a wavelength in nm:");
+		
+		//Receive the users wavelength.
+		wavelength = input.nextDouble();
+		if (wavelength<380)
+		{System.out.println("The entered wavelength is not a part of the visible spectrum.");
+		}
+		if else (wavelength<450)
+		{System.out.println("The color is Violet.");
+		
+		}
+		if else (wavelength<495)
+		System.out.println("The color is Blue.");
+	}
+
+}

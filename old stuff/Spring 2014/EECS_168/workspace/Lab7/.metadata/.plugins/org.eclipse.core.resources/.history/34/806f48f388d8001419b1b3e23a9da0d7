@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class lab07 
+{
+	public static void main(String [] args)
+	{
+		Scanner kb = new Scanner(System.in);
+		int size = 0;
+		
+		//Do statement to make sure the user inputs a number greater than 1 for the array size
+		do
+		{
+			System.out.print( "Input an array size: ");
+			size = kb.nextInt();
+		}while (size<=0);
+		
+	}
+	
+
+}

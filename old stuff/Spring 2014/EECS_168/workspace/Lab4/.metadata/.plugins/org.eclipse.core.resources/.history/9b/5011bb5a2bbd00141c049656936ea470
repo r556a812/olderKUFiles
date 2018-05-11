@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SummationOfFives
+{
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		// Declare variables
+		int number;
+		int x = 0;
+		System.out.print("Please input a positive integer as the end value: ");
+		
+		//Get the user input.
+		number = input.nextInt();
+		number = number/5;
+		
+		while (number+2>2)
+		{
+			number=number-1;
+			x = number * 5;
+		}
+		
+		System.out.print(number);
+	}
+		
+	}
+	

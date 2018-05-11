@@ -1,0 +1,4 @@
+vhdl work "\\fileserver.eecs.ku.edu\raviles\Lab9\LEDdisplay.vhd"
+vhdl work "\\fileserver.eecs.ku.edu\raviles\Lab9\display_driver .vhd"
+vhdl work "\\fileserver.eecs.ku.edu\raviles\Lab9\bit_full_adder .vhd"
+vhdl work "\\fileserver.eecs.ku.edu\raviles\Lab9\toplevel.vhd"

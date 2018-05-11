@@ -1,0 +1,8 @@
+xst -ise "H:/lab7/lab7.ise" -intstyle ise -ifn sevenSegment.xst -ofn sevenSegment.syr
+ngdbuild -ise "H:/lab7/lab7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "sevenSeg.ucf" -p xc3s500e-fg320-4 "sevenSegment.ngc" sevenSegment.ngd
+ngdbuild -ise "H:/lab7/lab7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "sevenSeg.ucf" -p xc3s500e-fg320-4 "sevenSegment.ngc" sevenSegment.ngd
+ngdbuild -ise "H:/lab7/lab7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "sevenSeg.ucf" -p xc3s500e-fg320-4 "sevenSegment.ngc" sevenSegment.ngd
+map -ise "H:/lab7/lab7.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr b -k 4 -c 100 -o sevenSegment_map.ncd sevenSegment.ngd sevenSegment.pcf
+par -ise "H:/lab7/lab7.ise" -w -intstyle ise -ol std -t 1 sevenSegment_map.ncd sevenSegment.ncd sevenSegment.pcf
+trce -ise "H:/lab7/lab7.ise" -intstyle ise -e 3 -s 4 -xml sevenSegment sevenSegment.ncd -o sevenSegment.twr sevenSegment.pcf -ucf sevenSeg.ucf
+bitgen -ise "H:/lab7/lab7.ise" -intstyle ise -f sevenSegment.ut sevenSegment.ncd

@@ -1,0 +1,193 @@
+n = 50000
+
+Build                                       
+
+1 minmaxHeap: 0.003234 secs                        
+  min-Heap: 0.001370 secs
+  
+2 minmaxHeap: 0.003046 secs
+  min-Heap: 0.001245 secs
+  
+3 minmaxHeap: 0.003038 secs
+  min-Heap: 0.001266 secs
+  
+4 minmaxHeap: 0.003037 secs
+  min-Heap: 0.001236 secs
+  
+5 minmaxHeap: 0.003053 secs
+  min-Heap: 0.001237 secs
+  
+Avg
+
+minmaxHeap: 0.0030816
+min-Heap: 0.0012708
+
+
+Delete/Insert
+
+1 minmaxHeap: 0.000330 secs                        
+  min-Heap: 0.157351 secs
+  
+2 minmaxHeap: 0.000355 secs
+  min-Heap: 0.161619 secs
+  
+3 minmaxHeap: 0.000328 secs
+  min-Heap: 0.162624 secs
+  
+4 minmaxHeap: 0.000401 secs
+  min-Heap: 0.160784 secs
+  
+5 minmaxHeap: 0.000348 secs
+  min-Heap: 0.161768 secs
+  
+Avg
+
+minmaxHeap: 0.0003524
+min-Heap: 0.160829
+
+----------------------------------------
+
+n = 100000
+
+Build                                       
+
+1 minmaxHeap: 0.006147 secs                        
+  min-Heap: 0.002546 secs
+  
+2 minmaxHeap: 0.006081 secs
+  min-Heap: 0.002496 secs
+  
+3 minmaxHeap: 0.006135 secs
+  min-Heap: 0.002505 secs
+  
+4 minmaxHeap: 0.006080 secs
+  min-Heap: 0.002479 secs
+  
+5 minmaxHeap: 0.006097 secs
+  min-Heap: 0.002483 secs
+  
+Avg
+
+minmaxHeap: 0.006108
+min-Heap: 0.0025018
+
+
+Delete/Insert
+
+1 minmaxHeap: 0.000775 secs                        
+  min-Heap: 0.624633 secs
+  
+2 minmaxHeap: 0.000633 secs
+  min-Heap: 0.639343 secs
+  
+3 minmaxHeap: 0.000622 secs
+  min-Heap: 0.634101 secs
+  
+4 minmaxHeap: 0.000804 secs
+  min-Heap: 0.634045 secs
+  
+5 minmaxHeap: 0.000621 secs
+  min-Heap: 0.642900 secs
+  
+Avg
+
+minmaxHeap: 0.000691
+min-Heap: 0.635004
+
+--------------------------------------
+
+n = 200000
+
+Build                                       
+
+1 minmaxHeap: 0.012253 secs                        
+  min-Heap: 0.005100 secs
+  
+2 minmaxHeap: 0.012144 secs
+  min-Heap: 0.004955 secs
+  
+3 minmaxHeap: 0.012168 secs
+  min-Heap: 0.004967 secs
+  
+4 minmaxHeap: 0.012171 secs
+  min-Heap: 0.004981 secs
+  
+5 minmaxHeap: 0.012164 secs
+  min-Heap: 0.004982 secs
+  
+Avg
+
+minmaxHeap: 0.01218
+min-Heap: 0.004997
+
+
+Delete/Insert
+
+1 minmaxHeap: 0.001535 secs                        
+  min-Heap: 2.535617 secs
+  
+2 minmaxHeap: 0.001524 secs
+  min-Heap: 2.490799 secs
+  
+3 minmaxHeap: 0.001324 secs
+  min-Heap: 2.491513 secs
+  
+4 minmaxHeap: 0.001231 secs
+  min-Heap: 2.515599 secs
+  
+5 minmaxHeap: 0.001342 secs
+  min-Heap: 2.556814 secs
+  
+Avg
+
+minmaxHeap: 0.0013912
+min-Heap: 2.51807
+
+-------------------------------------
+
+n = 400000
+
+Build                                       
+
+1 minmaxHeap: 0.024543 secs                        
+  min-Heap: 0.010179 secs
+  
+2 minmaxHeap: 0.019190 secs
+  min-Heap: 0.007979 secs
+  
+3 minmaxHeap: 0.019138 secs
+  min-Heap: 0.007812 secs
+  
+4 minmaxHeap: 0.019760 secs
+  min-Heap: 0.007817 secs
+  
+5 minmaxHeap: 0.19333 secs
+  min-Heap: 0.008031 secs
+  
+Avg
+
+minmaxHeap: 0.0203928
+min-Heap: 0.0083636
+
+
+Delete/Insert
+
+1 minmaxHeap: 0.003473 secs                        
+  min-Heap: 8.001864 secs
+  
+2 minmaxHeap: 0.002077 secs
+  min-Heap: 7.910352 secs
+  
+3 minmaxHeap: 0.001902 secs
+  min-Heap: 7.823454 secs
+  
+4 minmaxHeap: 0.002673 secs
+  min-Heap: 7.857452 secs
+  
+5 minmaxHeap: 0.02379 secs
+  min-Heap: 7.913428 secs
+  
+Avg
+
+minmaxHeap: 0.0025008
+min-Heap: 7.90131

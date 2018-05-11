@@ -1,0 +1,81 @@
+import Data.List
+import Data.Char
+import Data.Maybe
+
+main = putStrLn $ show (lotusSolver [5,0,0,0,1,6,0,0,0,0,3,0,0,0,7,0,6,2,1,0,0,0,1,7,0,0,6,0,0,5,0,3,6,7,2,0,0,2,1,0,0,4,0,0,4,0,0,1,0])
+
+lotusSolver:: [Int] -> [Int]
+lotusSolver nextVal = if (newIndex == Nothing) then (nextVal) else (lotusValue nextVal newNums (fromJust newIndex))
+  where newIndex = (elemIndex 0 nextVal)
+        newNums = placeNext (nextVal) (fromJust newIndex) (1)
+
+lotusCircle = [[0,1,2,3,4,5,6],[7,8,9,10,11,12,13],[14,15,16,17,18,19,20],[21,22,23,24,25,26,27],[28,29,30,31,32,33,34],[35,36,37,38,39,40,41],[42,43,44,45,46,47,48]]::[[Int]]
+
+lotusSwirlRight = [[0,7,15,22,30,37,45],[1,8,16,23,31,38,46],[2,9,17,24,32,39,47],[3,10,18,25,33,40,48],[4,11,19,26,34,41,42],[5,12,20,27,28,35,43],[6,13,14,21,29,36,44]]::[[Int]]
+
+lotusSwirlLeft = [[0,13,20,26,33,39,46],[1,7,14,27,34,40,47],[2,8,15,21,28,41,48],[3,9,16,22,29,35,42],[4,10,17,23,30,36,43],[5,11,18,24,31,37,44],[6,12,19,25,32,38,45]]::[[Int]]
+
+placeNext:: [Int] -> Int -> Int -> [Int]
+placeNext xs x y = 
+      if (y <= 7)
+        then if (y <= 7) 
+                     &&((xs !! ((lotusCircle !! (circle x)) !! 0) /= y) &&(xs !! ((lotusCircle !! (circle x)) !! 1) /= y)
+                     &&(xs !! ((lotusCircle !! (circle x)) !! 2) /= y)&&(xs !! ((lotusCircle !! (circle x)) !! 3) /= y)
+                     &&(xs !! ((lotusCircle !! (circle x)) !! 4) /= y)&&(xs !! ((lotusCircle !! (circle x)) !! 5) /= y)
+                     &&(xs !! ((lotusCircle !! (circle x)) !! 6) /= y)
+                     &&(xs !! ((lotusSwirlRight !! (swirl x)) !! 0) /= y) &&(xs !! ((lotusSwirlRight !! (swirl x)) !! 1) /= y)
+                     &&(xs !! ((lotusSwirlRight !! (swirl x)) !! 2) /= y)&&(xs !! ((lotusSwirlRight !! (swirl x)) !! 3) /= y)
+                     &&(xs !! ((lotusSwirlRight !! (swirl x)) !! 4) /= y)&&(xs !! ((lotusSwirlRight !! (swirl x)) !! 5) /= y)
+                     &&(xs !! ((lotusSwirlRight !! (swirl x)) !! 6) /= y)
+                     &&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 0) /= y)&&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 1) /= y)
+                     &&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 2) /= y)&&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 3) /= y)
+                     &&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 4) /= y)&&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 5) /= y)
+                     &&(xs !! ((lotusSwirlLeft !! (swirlTwo x)) !! 6) /= y))
+            then placeNext xs x (y + 1) ++ [y]
+            else placeNext xs x (y + 1)
+      else []
+   
+
+lotusValue:: [Int] -> [Int] -> Int -> [Int]
+lotusValue _ [] _ = []
+lotusValue nextVal (x:xs) y = if (next == []) then (lotusValue nextVal xs y ) else (next)
+    where next = lotusSolve nextVal y x 
+
+lotusSolve:: [Int] -> Int -> Int -> [Int]
+lotusSolve xs y another = if (elemIndex 0 xs == Nothing)
+                        then (xs) 
+                            else (lotusSolver (let (ys,_:zs) = splitAt y xs in ys ++ [another] ++ zs))
+
+circle:: Int -> Int
+circle x
+  | x == 0||x == 1||x == 2||x == 3||x == 4||x == 5||x == 6 = 0
+  | x == 7||x == 8||x == 9||x == 10||x == 11||x == 12||x == 13 = 1
+  | x == 14||x == 15||x == 16||x == 17||x == 18||x == 19||x == 20 = 2
+  | x == 21||x == 22||x == 23||x == 24||x == 25||x == 26||x == 27 = 3
+  | x == 28||x == 29||x == 30||x == 31||x == 32||x == 33||x == 34 = 4
+  | x == 35||x == 36||x == 37||x == 38||x == 39||x == 40||x == 41 = 5
+  | x == 42||x == 43||x == 44||x == 45||x == 46||x == 47||x == 48 = 6
+  | otherwise = 0
+
+swirl:: Int -> Int
+swirl x
+  | x == 0 || x == 7 || x == 15 || x == 22 || x == 30 || x == 37 || x == 45 = 0
+  | x == 1 || x == 8 || x == 16 || x == 23 || x == 31 || x == 38 || x == 46 = 1
+  | x == 2 || x == 9 || x == 17 || x == 24 || x == 32 || x == 39 || x == 47 = 2
+  | x == 3 || x == 10 || x == 18 || x == 25 || x == 33 || x == 40 || x == 48 = 3
+  | x == 4 || x == 11 || x == 19 || x == 26 || x == 34 || x == 41 || x == 42 = 4
+  | x == 5 || x == 12 || x == 20 || x == 27 || x == 28 || x == 35 || x == 43 = 5
+  | x == 6 || x == 13 || x == 14 || x == 21 || x == 29 || x == 36 || x == 44 = 6
+  | otherwise = 0
+
+swirlTwo:: Int -> Int
+swirlTwo x 
+  | x == 0||x == 13||x == 20||x == 26||x == 33||x == 39||x == 46 = 0
+  | x == 1||x == 7||x == 14||x == 27||x == 34||x == 40||x == 47 = 1
+  | x == 2||x == 8||x == 15||x == 21||x == 28||x == 41||x == 48 = 2
+  | x == 3||x == 9||x == 16||x == 22||x == 29||x == 35||x == 42 = 3
+  | x == 4||x == 10||x == 17||x == 23||x == 30||x == 36||x == 43 = 4
+  | x == 5||x == 11||x == 18||x == 24||x == 31||x == 37||x == 44 = 5
+  | x == 6||x == 12||x == 19||x == 25||x == 32||x == 38||x == 45 = 6
+  | otherwise = 0
+

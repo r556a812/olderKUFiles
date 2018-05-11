@@ -1,0 +1,33 @@
+import java.lang.Math;
+public class Hypotenuse 
+{
+	public static void main(String[] args)
+	{
+	//Math class.
+	double answer = 0.0;
+	double a = 0.0;
+	double b = 0.0;
+	
+	System.out.println("Will use the formula a^2 + b^2 = c^2 to solve for the hypotenuse of a triangle.");
+	System.out.println("Input a value for a:");
+	
+	//Read the input from the keyboard.
+	a = input.nextDouble();
+	
+	System.out.println("Input a value for b:");
+	
+	//Read the next input from the keyboard.
+	b = input.nextDouble();
+	
+	//Calculate the answer.
+	answer = Math.sqrt((a*a)+(b*b));
+	
+	System.out.println("The hypotenuse is : " + answer);
+	}
+	
+	
+	
+	
+	
+
+}

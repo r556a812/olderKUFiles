@@ -1,0 +1,22 @@
+﻿Socket Programming Assignment
+
+1) What are example applications using TCP and UDP?
+	UDP: media streaming with port 554, and voice over IP (VoIP) with port 5060
+	TCP: web (http) using port 80, and email using port 25
+
+2) Why did the UDP server need only one socket, whereas the TCP server needs two sockets?
+	TCP guarantees that it will get all the data transmitted therefore it needs to keep reporting back to each other that they have successfully received the packets being transmitted.
+	UDP is not guarantee to have everything and it is acceptable to have loss of data.  Therefore, the  receiver does not need to report whether or not they have received the packets being transmitted.
+
+3) If the TCP server needs to support n simultaneous connections, each from a different client host, how many sockets would the TCP server need?
+	N sockets
+
+
+
+Acknowledgements for coding:
+
+https://stackoverflow.com/questions/23700569/reading-port-number-as-an-argument-and-do-stuff
+
+https://www.ittc.ku.edu/~jpgs/courses/intronets/lecture-lab-socket-intronets-display.pdf
+
+

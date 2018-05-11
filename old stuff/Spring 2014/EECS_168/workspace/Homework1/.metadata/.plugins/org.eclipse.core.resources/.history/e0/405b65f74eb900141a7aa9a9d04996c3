@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class BananaStand 
+{
+	public static void main(String[] args)
+	{
+		Scanner input= new Scanner(System.in);
+		
+		char type;
+		char color;
+		double costT = 0;
+		double costC = 0;
+		int banana = 0;
+		double markups = 0;
+		double discounts = 0;
+		double totalBefore = 0;
+		double totalAfter = 0;
+		
+		
+		System.out.print("Welcome to the Banana Stand \n-------------------- \n");
+		System.out.print("Select type of banana: \nRegular (r/R) (no markup) \nOrganic (o/O) (20% markup) \nSaturated with Gamma Rays (g/G) (50% markup) \nInput your choice: ");
+		 
+		String tString = input.nextLine();
+		type = tString.charAt(0);
+		
+		
+		if (tString.charAt(0) == 'R')
+		{
+			costT = 0;
+		}
+		if (tString.charAt(0) == 'O')
+		{
+			costT = 0.1;
+		}
+		if (tString.charAt(0) == 'G')
+		{
+			costT = 0.5;
+		}
+		
+		
+		System.out.print("--------------------\nSelect color of banana:\nYellow (y/Y) (no discount)\nGreen (g/G) (10% discount)\nMixed (m/M) (5% discount)\nInput your choice: ");
+		
+		String cString = input.nextLine();
+		color = cString.charAt(0);
+		
+		if (cString.charAt(0) == 'Y')
+		{
+			costC = 0;
+		}
+		if (cString.charAt(0) == 'G')
+		{
+			costC = 0.1;
+		}
+		if (cString.charAt(0) == 'M')
+		{
+			costC = 0.05;
+		}
+		
+			
+		System.out.print("--------------------\nHow many bananas do you want?: ");
+		
+		banana = input.nextInt();
+		totalBefore = banana * 0.03;
+		markups = costT * totalBefore;
+		discounts = costC * totalBefore;
+		totalAfter = totalBefore + markups - discounts;
+		
+		System.out.printf("\nTotal cost for " + banana + " banana(s) before markups or discounts: %.2f", totalBefore);
+		
+		System.out.printf("\nTotal markups: $%.2f ", markups);
+		
+		System.out.printf("\nTotal discount: $%.2f ",discounts);
+	
+		System.out.printf("\nTotal cost: $ %.2f ", totalAfter);
+		
+	}
+
+}

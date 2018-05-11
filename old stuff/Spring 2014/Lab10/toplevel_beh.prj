@@ -1,0 +1,8 @@
+vhdl work "LEDdisplay.vhd"
+vhdl work "function_select.vhd"
+vhdl work "display_driver.vhd"
+vhdl work "XORer.vhd"
+vhdl work "ORer.vhd"
+vhdl work "ANDer.vhd"
+vhdl work "ADDer.vhd"
+vhdl work "toplevel.vhd"

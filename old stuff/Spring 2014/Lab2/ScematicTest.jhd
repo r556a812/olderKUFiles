@@ -1,0 +1,3 @@
+MODULE ScematicTest
+SUBMODULE Lab2Schematic
+INSTANCE UUT

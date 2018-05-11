@@ -1,0 +1,9 @@
+V3 3
+FL //fileserver.eecs.ku.edu/raviles/lab7/sevenSegment.vhd 2015/03/11.09:49:15 J.36
+EN work/sevenSegment 1426085644 \
+      FL //fileserver.eecs.ku.edu/raviles/lab7/sevenSegment.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/sevenSegment/Behavioral 1426085645 \
+      FL //fileserver.eecs.ku.edu/raviles/lab7/sevenSegment.vhd \
+      EN work/sevenSegment 1426085644

@@ -1,0 +1,8 @@
+V3 8
+FL H:/Lab2/Lab2Schematic.vhf 2015/02/04.09:54:33 J.36
+EN work/Lab2Schematic 1423066352 FL H:/Lab2/Lab2Schematic.vhf \
+      PB ieee/std_logic_1164 1177545575 PH ieee/NUMERIC_STD 1177545583 LB UNISIM \
+      PH unisim/VCOMPONENTS 1177545586
+AR work/Lab2Schematic/BEHAVIORAL 1423066353 \
+      FL H:/Lab2/Lab2Schematic.vhf EN work/Lab2Schematic 1423066352 CP AND3 CP AND2 \
+      CP OR3 CP INV

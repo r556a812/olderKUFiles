@@ -1,0 +1,53 @@
+public class Time{
+          
+
+	public void updateSeconds()
+	{
+		if (second == 59)
+		{
+			second = 0;
+		}
+		else 
+		{
+			second++;
+		}
+	}
+
+	public void updateMinutes()
+	{
+		if (minute == 59)
+		{
+			minute = 0;
+		}
+		else
+		{
+			minute++;
+		}
+	}
+
+	public void updateHours(int type)
+	{
+		if (type == 12)
+		{
+			if (hour == 12)
+			{
+				hour = 1;
+			}
+			else
+			{
+				hour++;
+			}
+		}
+		if (type == 24)
+		{
+			if (hour == 23)
+			{
+				hour = 0;
+			}
+			else
+			{
+				hour++;
+			}
+		}
+	}
+

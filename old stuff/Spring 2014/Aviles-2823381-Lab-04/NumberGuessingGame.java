@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class NumberGuessingGame 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		//Declare variables
+		int x;
+		
+		//Display to the user the greeting.
+		System.out.print("Welcome to the number guessing game.");
+		
+		
+		//Create the do-while loop.
+		do
+		{
+			System.out.print("\nGuess a number: ");
+			//Get users guess.
+			x = input.nextInt();
+			//If statement to display to the user they guessed too high.
+			if (x>73)
+			{
+				System.out.print("Sorry, your guess is too high.");
+			}
+			//If statement to display to the user they guessed too low
+			if (x<73)
+			{
+				System.out.print("Sorry, your guess is too low.");
+			}
+		}while (x != 73 ); //while statement to keep the loop going until they guess right.
+		
+		//Display to the user they won.
+		System.out.println("You win!");
+		
+			
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+V3 11
+FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor3_gate.vhd 2015/03/25.10:03:25 J.36
+EN work/my_xor3_gate 1427297564 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor3_gate.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/my_xor3_gate/Structural 1427297565 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor3_gate.vhd \
+      EN work/my_xor3_gate 1427297564 CP my_xor_gate
+FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor6_gate.vhd 2015/03/25.10:26:42 J.36
+EN work/my_xor6_gate 1427297566 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor6_gate.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/my_xor6_gate/Structural 1427297567 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor6_gate.vhd \
+      EN work/my_xor6_gate 1427297566 CP my_xor3_gate CP my_xor_gate
+FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor_gate.vhd 2015/03/25.10:04:03 J.36
+EN work/my_xor_gate 1427297562 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor_gate.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/my_xor_gate/Behavioral 1427297563 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor_gate.vhd \
+      EN work/my_xor_gate 1427297562

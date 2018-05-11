@@ -1,0 +1,47 @@
+fname//
+fhead//
+ftail//
+id//
+string//
+op1//
+exprs//
+call//
+m//
+-------------- enough to get through the second example
+con//
+doret//
+set//
+op2//
+index//
+ccexpr//
+rel//
+n//
+backpatch//
+doif//
+dofor//
+-------------- enough to get through the first example
+doifelse//
+dowhile//
+dodo//
+ccand//
+ccor//
+ccnot//
+opb//
+startloopscope//
+endloopscope//
+docontinue//
+dobreak//
+labeldcl//
+dogoto//
+
+2. The "formalnum", "formaltypes[]", "localnum" and "localtypes[]" global variables are used to print the "formal ..." and "localloc ..." statements in the "fhead()" routine. You should figure out how to use these global variables. These global variables should be already initialized when you enter fhead().
+
+3. "fname()" installs the function name into the symbol table. You will also need to initialize "formalnum" and "localnum" in this "fname()".
+
+4. "id()" is already implemented for you.
+
+5. Look at the intermediate code that is to be generated to implement "string()". "nexttemp()" is a function (in semutil.c) that you may use to generate a new temporary number, whenever needed.
+
+6. "node()" is a function that generates a semantic record, given the right parameters. There are some use cases of this function in the sem.c file given to you.
+
+I hope that is sufficient to get started and make progress.

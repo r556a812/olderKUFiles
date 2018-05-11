@@ -1,0 +1,113 @@
+import java.util.Scanner;
+
+public class MethodPractice 
+{
+	
+	
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int x=0;
+		int y=0;
+		int i=0;
+		int m;
+		String s="";
+		int t=0;
+		double a=0;
+		
+		System.out.print("Input two numbers: \n");
+		
+		while (i<2)
+		{
+			if(i==0)
+			{
+			x = input.nextInt();
+			}
+			if (i==1)
+			{
+				y = input.nextInt();
+			}
+			i=i+1;
+		}
+	
+		m = max(x,y);
+		
+		System.out.print("The max of " + x + " and " + y + " is: " + m);
+		
+		System.out.print("\n" + "\n");
+		System.out.print("Input a radius: ");
+		
+		double r=0;
+		
+		r=input.nextDouble();
+		
+		a=sphereArea(r);
+		
+		System.out.print("The area of a sphere with this radius is: " + a);
+		
+		System.out.print("\n" + "\n");
+		
+		
+		System.out.print("Input a String: \n");
+		int z=0;
+		while (z<2)
+		{
+			if (z==0)
+			{
+				s=input.nextLine();
+			}
+			if (z==1)
+			{
+				System.out.print("\nHow many times do you want to print it?: \n");
+				t=input.nextInt();
+			}
+		}
+		
+		printWord(s,t);
+		
+		
+	}
+	
+
+		public static int max(int a, int b)
+		{
+			if (a>b)
+			{
+				return a;
+			}
+			else
+			{
+				return b;
+			}
+		}
+		
+		public static double sphereArea(double x)
+		{
+			double a=0;
+			
+			if (x>0)
+			{
+				a = 4*3.14159*x*x;
+				return a;
+			}
+			else
+			{
+				a=0.0;
+				return a;
+			}
+		}
+		
+		public static void printWord(String word, int times)
+		{
+			int i=0;
+			
+			while (i< times)
+			{
+				System.out.print(word);
+				i=i+1;
+			}
+		}
+}
+
+

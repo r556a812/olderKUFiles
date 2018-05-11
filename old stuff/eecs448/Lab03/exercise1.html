@@ -1,0 +1,76 @@
+<html>
+
+
+
+<head>
+	
+
+<title>EXERCISE1</title>
+	
+<meta charset="UTF-8">
+
+
+<style>
+
+h1 {
+	
+	color: black;
+	
+	font-family: ariel;
+	
+	font-size: 300%;
+
+}
+
+
+
+</style>
+
+
+
+</head>
+
+	
+
+
+
+<h1 style="text-align:center;">Exercise 1</h1>
+	
+	
+
+<body style="background-color:lightgrey;">
+		
+	
+	<form>
+	Password1:<br>
+	<input type="password" id="psw1"><br><br>
+	Password2:<br>
+	<input type="password" id="psw2">
+	</form>
+<button type="button" onclick="passwordCheck()">Validate</button>
+
+
+<script>
+function passwordCheck() {
+	if (document.getElementById("psw1").value == document.getElementById("psw2").value) {
+		if (document.getElementById("psw1").value.length < 8 ) {
+			window.alert("Password must be at least 8 characters long!");
+		}
+		else {
+			window.alert("CORRECT INPUT!");
+			
+		}
+	}
+	else {
+		window.alert("Passwords do not match!");
+	}
+	
+		
+}
+</script>
+
+</body>
+
+
+</html>
+

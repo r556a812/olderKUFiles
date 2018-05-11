@@ -1,0 +1,39 @@
+
+**** Build of configuration Debug for project EECS_388_P7 ****
+
+"C:\\TI_CodeComposer\\ccsv6\\utils\\bin\\gmake" -k -j 8 all 
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/asmCompute.asm'
+'Building file: H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/testAssembly.c'
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_P7/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/asmCompute.pp" --obj_directory="src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/asmCompute.asm"
+'Invoking: ARM Compiler'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me --include_path="C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --include_path="C:/TI_CodeComposer/StellarisWare-LM3S1968" --include_path="H:/EECS_388/TI_CCS_Archive/OLED_Driver" --include_path="H:/EECS_388/TI_CCS_Archive/FreeRTOS/include" --include_path="H:/EECS_388/TI_CCS_Projects/EECS_388_P7/targetConfigs" -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full --preproc_with_compile --preproc_dependency="src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/testAssembly.pp" --obj_directory="src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src"  "H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/testAssembly.c"
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/asmCompute.asm'
+' '
+'Finished building: H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/testAssembly.c'
+' '
+'Building target: EECS_388_P7.out'
+'Invoking: ARM Linker'
+"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib --abi=eabi -me -g --gcc --define=CCS6_ARMCM3 --define="ccs" --define=PART_LM3S1968 --display_error_number --emit_warnings_as_errors --diag_suppress=179 --diag_wrap=off --printf_support=full -z -m"EECS_388_P7.map" --heap_size=4096 --stack_size=4096 -i"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/lib" -i"C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include" --reread_libs --warn_sections --display_error_number --emit_warnings_as_errors --xml_link_info="EECS_388_P7_linkInfo.xml" --rom_model -o "EECS_388_P7.out" "./main.obj" "./targetConfigs/lm3s1968_startup_ccs.obj" "./src/led.obj" "./src/oled.obj" "./src/system.obj" "./src/OLED_Driver/rit128x96x4.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968_startup_ccs.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/asmCompute.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/led.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/oled.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/system.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/testAssembly.obj" "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/main.obj" "./src/FreeRTOS/croutine.obj" "./src/FreeRTOS/event_groups.obj" "./src/FreeRTOS/list.obj" "./src/FreeRTOS/queue.obj" "./src/FreeRTOS/tasks.obj" "./src/FreeRTOS/timers.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM4F/port.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM4F/portasm.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM3/port.obj" "./src/FreeRTOS/portable/CCS6/ARM_CM3/portasm.obj" "./src/FreeRTOS/portable/CCS5/ARM_CM3/port.obj" "./src/FreeRTOS/portable/CCS5/ARM_CM3/portasm.obj" "./src/FreeRTOS/include/heap_2.obj" "../targetConfigs/lm3s1968.cmd" "H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd"  -l"libc.a" -l"C:\TI_CodeComposer\StellarisWare-LM3S1968\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" 
+<Linking>
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 13: error #10263: FLASH memory range has already been specified
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 13: error #10264: FLASH memory range overlaps existing memory range FLASH
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 14: error #10263: SRAM memory range has already been specified
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 14: error #10264: SRAM memory range overlaps existing memory range SRAM
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 45: error #10190-D: absolute symbol "__STACK_TOP" being redefined
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 45: error #10190-D: absolute symbol "__STACK_TOP" being redefined
+error #10056: symbol "ResetISR" redefined: first defined in "./targetConfigs/lm3s1968_startup_ccs.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968_startup_ccs.obj"
+error #10056: symbol "g_pfnVectors" redefined: first defined in "./targetConfigs/lm3s1968_startup_ccs.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968_startup_ccs.obj"
+error #10056: symbol "LEDTask" redefined: first defined in "./src/led.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/led.obj"
+error #10056: symbol "startScreen" redefined: first defined in "./src/oled.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/oled.obj"
+error #10056: symbol "OLEDTask" redefined: first defined in "./src/oled.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/oled.obj"
+
+>> Compilation failure
+error #10056: symbol "systemInit" redefined: first defined in "./src/system.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/src/system.obj"
+error #10056: symbol "main" redefined: first defined in "./main.obj"; redefined in "./src/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/main.obj"
+"H:/EECS_388/TI_CCS_Archive/FreeRTOS_Assembly/EECS_388_FreeRTOS_Assembly/targetConfigs/lm3s1968.cmd", line 45: error #10190-D: absolute symbol "__STACK_TOP" being redefined
+error #10010: errors encountered during linking; "EECS_388_P7.out" not built
+gmake: *** [EECS_388_P7.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

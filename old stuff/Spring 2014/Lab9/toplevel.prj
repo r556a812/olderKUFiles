@@ -1,0 +1,4 @@
+vhdl work "LEDdisplay.vhd"
+vhdl work "display_driver .vhd"
+vhdl work "bit_full_adder .vhd"
+vhdl work "toplevel.vhd"

@@ -1,0 +1,281 @@
+tetrisGame = {};
+tetrisGame.currentState = [];
+tetrisGame.initialized = false;
+tetrisGame.falling = false;
+tetrisGame.dotLocation1 = 0;
+tetrisGame.dotLocation2 = 0;
+tetrisGame.dotLocation3 = 0;
+tetrisGame.dotLocation4 = 0;
+
+
+
+tetrisGame.AddShape = function(shapeType, position, id){
+	
+	AddToConsole("Need to add shape with type = {"+shapeType+"}, position = {"+position+"}, and id = {" + id + "}");
+	
+	if(!this.initialized){this.Initialize();}
+	
+	//Create the shapes using calling methods to each specific shape type
+	if (shapeType == 0) {
+		this.Shape0(position, id);
+	}
+	else if (shapeType == 1) {
+		this.Shape1(position, id);
+	}
+	else if (shapeType == 2) {
+		this.Shape2(position, id);
+	}
+	else if (shapeType == 3) {
+		this.Shape3(position, id);
+	}
+	else if (shapeType == 4) {
+		this.Shape4(position, id);
+	}
+	else if (shapeType == 5) {
+		this.Shape5(position, id);
+	}
+	else if (shapeType == 6) {
+		this.Shape6(position, id);
+	}
+	
+	
+	this.falling = true;
+}
+
+tetrisGame.IncrementTime = function(){
+	if(!this.initialized){this.Initialize();}
+	
+	var id = this.currentState[this.dotLocation1]
+	
+	// Set the current position of the dot to be empty
+	this.currentState[this.dotLocation1] = -1;
+	this.currentState[this.dotLocation2] = -1;
+	this.currentState[this.dotLocation3] = -1;
+	this.currentState[this.dotLocation4] = -1;
+
+	if(this.dotLocation1 + 10 == this.currentState.length || this.dotLocation2 + 10 == this.currentState.length || this.dotLocation3 + 10 == this.currentState.length || this.dotLocation4 + 10 == this.currentState.length){
+		this.falling = false;
+		return;
+	}
+		
+	//Check that there is not a dot already under the current position
+	if(this.currentState[this.dotLocation1 + 10] != -1 || this.currentState[this.dotLocation2 + 10] != -1  || this.currentState[this.dotLocation3 + 10] != -1  || this.currentState[this.dotLocation4 + 10] != -1) {
+		this.falling = false;
+		return;
+	}
+	
+	// Move the dotLocation
+	this.dotLocation1 += 10;
+	this.dotLocation2 += 10;
+	this.dotLocation3 += 10;
+	this.dotLocation4 += 10;
+	
+	// Set the new current position of the dot to be filled
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+	
+	
+}
+
+tetrisGame.GetCurrentState = function(){
+	if(!this.initialized){this.Initialize();}
+	return this.currentState;
+}
+
+tetrisGame.IsShapeFalling = function(){
+	if(!this.initialized){this.Initialize();}
+	return tetrisGame.falling;
+}
+
+tetrisGame.Initialize = function(){
+	for(var i = 0; i < 10; i++){
+		for(var j = 0; j < 20; j++){
+			this.currentState.push(-1);
+		}
+	}
+	this.initialized = true;
+}
+
+tetrisGame.Shape0 = function(position, id) {
+	if (position < 7) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+1;
+		this.dotLocation3 = position+2;
+		this.dotLocation4 = position+3;
+	}
+	else if (position == 7) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position;
+		this.dotLocation3 = position+1;
+		this.dotLocation4 = position+2;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position-2;
+		this.dotLocation2 = position-1;
+		this.dotLocation3 = position;
+		this.dotLocation4 = position+1;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-3;
+		this.dotLocation2 = position-2;
+		this.dotLocation3 = position-1;
+		this.dotLocation4 = position;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+
+tetrisGame.Shape1 = function(position, id) {
+	if (position < 8) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+1;
+		this.dotLocation3 = position+2;
+		this.dotLocation4 = position+11;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position;
+		this.dotLocation3 = position+1;
+		this.dotLocation4 = position+10;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-2;
+		this.dotLocation2 = position-1;
+		this.dotLocation3 = position;
+		this.dotLocation4 = position+9;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+
+tetrisGame.Shape2 = function(position, id) {
+	if (position < 8) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+1;
+		this.dotLocation3 = position+11;
+		this.dotLocation4 = position+12;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position;
+		this.dotLocation3 = position+10;
+		this.dotLocation4 = position+11;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-2;
+		this.dotLocation2 = position-1;
+		this.dotLocation3 = position+9;
+		this.dotLocation4 = position+10;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+
+tetrisGame.Shape3 = function(position, id) {
+	if (position < 8) {
+		this.dotLocation1 = position+10;
+		this.dotLocation2 = position+11;
+		this.dotLocation3 = position+1;
+		this.dotLocation4 = position+2;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position+9;
+		this.dotLocation2 = position+10;
+		this.dotLocation3 = position;
+		this.dotLocation4 = position+1;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position+8;
+		this.dotLocation2 = position+9;
+		this.dotLocation3 = position-1;
+		this.dotLocation4 = position;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+
+tetrisGame.Shape4 = function(position, id) {
+	if (position < 9) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+1;
+		this.dotLocation3 = position+10;
+		this.dotLocation4 = position+11;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position;
+		this.dotLocation3 = position+9;
+		this.dotLocation4 = position+10;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+
+tetrisGame.Shape5 = function(position, id) {
+	if (position < 8) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+10;
+		this.dotLocation3 = position+11;
+		this.dotLocation4 = position+12;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position+9;
+		this.dotLocation3 = position+10;
+		this.dotLocation4 = position+11;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-2;
+		this.dotLocation2 = position+8;
+		this.dotLocation3 = position+9;
+		this.dotLocation4 = position+10;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}
+	
+	tetrisGame.Shape6 = function(position, id) {
+	if (position < 8) {
+		this.dotLocation1 = position;
+		this.dotLocation2 = position+1;
+		this.dotLocation3 = position+2;
+		this.dotLocation4 = position+10;
+	}
+	else if (position == 8) {
+		this.dotLocation1 = position-1;
+		this.dotLocation2 = position;
+		this.dotLocation3 = position+1;
+		this.dotLocation4 = position+9;
+	}
+	else if (position == 9) {
+		this.dotLocation1 = position-2;
+		this.dotLocation2 = position-1;
+		this.dotLocation3 = position;
+		this.dotLocation4 = position+8;
+	}
+	
+	this.currentState[this.dotLocation1] = id;
+	this.currentState[this.dotLocation2] = id;
+	this.currentState[this.dotLocation3] = id;
+	this.currentState[this.dotLocation4] = id;
+}

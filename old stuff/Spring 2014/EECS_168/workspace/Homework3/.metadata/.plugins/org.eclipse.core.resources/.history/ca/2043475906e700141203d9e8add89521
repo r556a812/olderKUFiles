@@ -1,0 +1,19 @@
+
+public class GameDriver 
+{
+	public static void main(String[] args)
+	{
+		HangMan game=new HangMan();
+		String x=game.getDisguisedWord();
+
+		System.out.println("Welcome to the Hangman Game!\n----------------------------");
+		
+		System.out.println("Guess this: ");
+		
+		
+		
+		
+	}
+	
+
+}

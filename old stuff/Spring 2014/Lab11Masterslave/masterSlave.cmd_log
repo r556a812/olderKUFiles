@@ -1,0 +1,14 @@
+xst -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -ifn masterSlave.xst -ofn masterSlave.syr
+ngdbuild -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 "masterSlave.ngc" masterSlave.ngd
+map -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -p xc3s500e-fg320-5 -cm area -pr b -k 4 -c 100 -o masterSlave_map.ncd masterSlave.ngd masterSlave.pcf
+par -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -w -intstyle ise -ol std -t 1 masterSlave_map.ncd masterSlave.ncd masterSlave.pcf
+trce -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -e 3 -s 5 -xml masterSlave masterSlave.ncd -o masterSlave.twr masterSlave.pcf
+bitgen -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -f masterSlave.ut masterSlave.ncd
+ngdbuild -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -dd _ngo -nt timestamp -uc "pins.ucf" -p xc3s500e-fg320-5 "masterSlave.ngc" masterSlave.ngd
+ngdbuild -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -dd _ngo -nt timestamp -uc "pins.ucf" -p xc3s500e-fg320-5 "masterSlave.ngc" masterSlave.ngd
+map -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -p xc3s500e-fg320-5 -cm area -pr b -k 4 -c 100 -o masterSlave_map.ncd masterSlave.ngd masterSlave.pcf
+ngdbuild -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -dd _ngo -nt timestamp -uc "pins.ucf" -p xc3s500e-fg320-5 "masterSlave.ngc" masterSlave.ngd
+map -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -p xc3s500e-fg320-5 -cm area -pr b -k 4 -c 100 -o masterSlave_map.ncd masterSlave.ngd masterSlave.pcf
+par -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -w -intstyle ise -ol std -t 1 masterSlave_map.ncd masterSlave.ncd masterSlave.pcf
+trce -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -e 3 -s 5 -xml masterSlave masterSlave.ncd -o masterSlave.twr masterSlave.pcf -ucf pins.ucf
+bitgen -ise "H:/Lab11Masterslave/Lab11Masterslave.ise" -intstyle ise -f masterSlave.ut masterSlave.ncd

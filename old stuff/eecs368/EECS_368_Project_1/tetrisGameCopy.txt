@@ -1,0 +1,346 @@
+tetrisGame = {};
+
+tetrisGame.initialized = false;
+tetrisGame.falling = false;
+
+tetrisGame.currentState = [];
+tetrisGame.currentRender = [];
+
+tetrisGame.currId = 0;
+tetrisGame.currShapeType = 0;
+tetrisGame.currPosition = [];
+
+tetrisGame.score = 0;
+
+tetrisGame.AddShape = function (shapeType, position, id) {
+    AddToConsole("Add shape - Type : " + shapeType + ", Position : " + position + ", and Id : " + id);
+
+    if(!this.initialized){this.Initialize();}
+
+    this.falling = true;
+
+    //Load the currPosition with the shape
+    this.currId = id;
+    this.currShapeType = shapeType;
+
+    this.LoadShapePositions(position);
+
+    //Check to see if the new position is already populated
+    var resetRender = false;
+
+    for (var i = 0; i < 4; i++) {
+        var j = this.currPosition[i];
+
+        if (this.currentRender[j] != -1) {
+            resetRender = true;
+        }
+    }
+
+    if (resetRender) {
+        this.Initialize();
+    }
+    // Render shape
+    for (i = 0; i < 0; i++) {
+        var j = currPosition[i];
+
+        this.currentRender[j] = this.currId;
+    }
+}
+
+tetrisGame.IncrementTime = function(){
+    if(!this.initialized){this.Initialize();}
+      
+    //Check to see if the new position is beyond the scope of the matrix
+    for (var i = 0; i < 4; i++) {
+        if (this.currPosition[i] + 10 > 199) {
+            this.falling = false;
+            return;
+        }
+    }
+	
+    //Check to see if the new position is already populated
+    for (var i = 0; i < 4; i++) {
+        var j = this.currPosition[i] + 10;
+
+        if (this.currentRender[j] != -1 && this.currentRender[j] != this.currId) {
+            this.falling = false;
+            return;
+        }
+    }
+
+    // Remove existing shape	
+    for (var i = 0; i < 4; i++) {
+        var j = this.currPosition[i];
+
+        this.currentRender[j] = -1;
+    }
+
+    // Move shape down and render	
+    for (var i = 0; i < 4; i++) {
+        this.currPosition[i] = this.currPosition[i] + 10;
+
+        var j = this.currPosition[i];
+        this.currentRender[j] = this.currId;
+    }
+
+    tetrisGame.Shift();
+
+}
+
+tetrisGame.GetCurrentState = function(){
+    if(!this.initialized){this.Initialize();}
+	
+    if (this.IsShapeFalling()) {
+        for (var i = 0; i < this.currentState.length; i++) {
+            this.currentState[i] = this.currentRender[i];
+        }
+    }
+
+    return this.currentState;
+}
+
+tetrisGame.IsShapeFalling = function(){
+    if(!this.initialized){this.Initialize();}
+
+    return this.falling;
+}
+
+tetrisGame.Initialize = function(){
+    var c = 0;
+
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 20; j++) {
+            this.currentState[c] = -1;
+            this.currentRender[c] = -1;
+
+            c++;
+        }
+    }
+
+    this.initialized = true;
+}
+
+tetrisGame.LoadShapePositions = function (position) {
+    while (this.currPosition.length) { this.currPosition.pop(); }
+
+    if (this.currShapeType == 0) {
+		this.Shape0(position); 
+    }
+    else if (this.currShapeType == 1) { 
+		this.Shape1(position); 
+    }
+    else if (this.currShapeType == 2) { 
+		this.Shape2(position); 
+    }
+    else if (this.currShapeType == 3) { 
+		this.Shape3(position); 
+    }
+    else if (this.currShapeType == 4) { 
+		this.Shape4(position); 
+    }
+    else if (this.currShapeType == 5) { 
+		this.Shape5(position); 
+    }
+    else if (this.currShapeType == 6) { 
+		this.Shape6(position); 
+    }
+
+
+    for (var i = 0; i < 4; i++) {
+        var j = this.currPosition[i];
+    }
+}
+
+tetrisGame.Shift = function () {
+	if (this.currShapeType == 0) {
+		if ((this.currPosition[0] % 10) != 0) {
+
+			//Check to see if the new position is already populated
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i] - 1;
+
+				if (this.currentRender[j] != -1 && this.currentRender[j] != this.currId) {
+				
+					return;
+				}
+			}
+		
+			// Remove existing shape	
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i];
+
+				this.currentRender[j] = -1;
+			}
+
+			// Move shape down and render	
+			for (var i = 0; i < 4; i++) {
+				this.currPosition[i] = this.currPosition[i] - 1;
+
+				var j = this.currPosition[i];
+				this.currentRender[j] = this.currId;
+			}
+		}
+	}
+	else if (this.currShapeType == 4) {
+		if ((this.currPosition[3] % 10) != 9) {
+
+			//Check to see if the new position is already populated
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i] + 1;
+
+				if (this.currentRender[j] != -1 && this.currentRender[j] != this.currId) {
+				
+					return;
+				}
+			}
+		
+			// Remove existing shape	
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i];
+
+				this.currentRender[j] = -1;
+			}
+
+			// Move shape down and render	
+			for (var i = 0; i < 4; i++) {
+				this.currPosition[i] = this.currPosition[i] + 1;
+
+				var j = this.currPosition[i];
+				this.currentRender[j] = this.currId;
+			}
+		}
+	}
+	else {
+		if (((this.currPosition[3] % 10) >= 8) && ((this.currPosition[0] % 10) >= 3)) {
+
+			//Check to see if the new position is already populated
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i] - 1;
+
+				if (this.currentRender[j] != -1 && this.currentRender[j] != this.currId) {
+				
+					return;
+				}
+			}
+		
+			// Remove existing shape	
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i];
+
+				this.currentRender[j] = -1;
+			}
+
+			// Move shape down and render	
+			for (var i = 0; i < 4; i++) {
+				this.currPosition[i] = this.currPosition[i] - 1;
+
+				var j = this.currPosition[i];
+				this.currentRender[j] = this.currId;
+			}
+		}
+		else if (((this.currPosition[0] % 10) <= 3) && ((this.currPosition[3] % 10) <= 8)) {
+
+			//Check to see if the new position is already populated
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i] + 1;
+
+				if (this.currentRender[j] != -1 && this.currentRender[j] != this.currId) {
+				
+					return;
+				}
+			}
+		
+			// Remove existing shape	
+			for (var i = 0; i < 4; i++) {
+				var j = this.currPosition[i];
+
+				this.currentRender[j] = -1;
+			}
+
+			// Move shape down and render	
+			for (var i = 0; i < 4; i++) {
+				this.currPosition[i] = this.currPosition[i] + 1;
+
+				var j = this.currPosition[i];
+				this.currentRender[j] = this.currId;
+			}
+		}
+	}
+}
+
+tetrisGame.Shape0 = function (position, id) {
+    if (position == 7) { 
+		position = position - 1; 
+    }
+    else if (position == 8) { 
+		position = position - 2; 
+    }
+    else if (position == 9) { 
+		position = position - 3; 
+    }
+
+    this.currPosition.push(position, position + 1, position + 2, position + 3);
+}
+
+tetrisGame.Shape1 = function (position, id) {
+    if (position == 8) { 
+		position = position - 1; 
+    }
+    else if (position == 9) { 
+		position = position - 2; 
+    }
+
+    this.currPosition.push(position, position + 1, position + 2, position + 11);
+}
+
+tetrisGame.Shape2 = function (position, id) {
+    if (position == 8) { 
+		position = position - 1; 
+    }
+    else if (position == 9) { 
+		position = position - 2; 
+    }
+
+    this.currPosition.push(position, position + 1, position + 11, position + 12);
+}
+
+tetrisGame.Shape3 = function (position, id) {
+    if (position == 8) { 
+		position = position - 1; 
+    }
+    else if (position == 9) { 
+		position = position - 2; 
+    }
+
+    this.currPosition.push(position + 10, position + 11, position + 1, position + 2);
+}
+
+tetrisGame.Shape4 = function (position, id) {
+    if (position == 9) { 
+		position = position - 1; 
+    }
+
+    this.currPosition.push(position, position + 1, position + 10, position + 11);
+}
+
+tetrisGame.Shape5 = function (position, id) {
+    if (position == 8) { 
+		position = position - 1; 
+    }
+    else if (position == 9) { 
+		position = position - 2; 
+    }
+
+    this.currPosition.push(position, position + 10, position + 11, position + 12);
+}
+
+tetrisGame.Shape6 = function (position, id) {
+    if (position == 8) { 
+		position = position - 1; 
+    }
+    else if (position == 9) { 
+		position = position - 2; 
+    }
+
+    this.currPosition.push(position, position + 1, position + 2, position + 10);
+}

@@ -1,0 +1,100 @@
+import java.util.Scanner;
+public class lab07 
+{
+	public static void main(String [] args)
+	{
+		Scanner kb = new Scanner(System.in);
+		int size = 0;
+		double [] array = null;
+		
+		//Do statement to make sure the user inputs a number greater than 1 for the array size
+		do
+		{
+			System.out.print( "Input an array size: ");
+			size = kb.nextInt();
+		}while (size<=0);
+		
+		System.out.print("\n");
+		
+		//Assign the size of the array
+		array = new double [size];
+				
+		System.out.println("Now please enter " + size + " numbers");
+				
+		//For loop to get the array values from the user
+		for (int i=0; i<size; i++)
+		{
+			System.out.print("Input a number into your array: ");
+			array [i]=kb.nextDouble();
+		}
+		
+		printArray(array);
+		
+		System.out.print("\n\n");
+		
+		int newSize = 0;
+		
+		do
+		{
+			System.out.print( "Input a new size: ");
+			newSize = kb.nextInt();
+		}while (newSize<size+1);
+		
+		
+		double [] newArray= arrayResize(array, newSize);
+		
+		System.out.print("You need to add " + (newSize-size) + " values\n");
+		
+		for (int i=size; i<newSize; i++)
+		{
+			System.out.print("Input a number to add to your array: ");
+			newArray[i]=kb.nextDouble();
+		}
+		
+		printArray(newArray);
+	}
+				
+		
+	
+	public static void printArray(double [] arr)
+	{
+		//For loop to display the numbers the user gave
+				System.out.print("Here are all the numbers in your array:\n[" );
+				for (int i=0; i<arr.length; i++)
+				{
+					if (i<arr.length-1)
+					{
+					System.out.print(arr[i] + ", ");
+					}
+					else
+					{
+						System.out.print(arr[i]);
+					}
+				}
+				System.out.print("]");
+				
+	}
+	
+	
+	
+	public static double[] arrayResize(double[] oldArray, int newSize)
+	{
+		double [] newArray= new double [newSize];
+		
+		for (int i=0; i<oldArray.length; i++)
+		{
+			newArray[i]=oldArray[i];
+			
+		}
+		for (int i=oldArray.length; i<newArray.length; i++)
+		{
+			newArray[i]=0;
+		}
+		
+		return (newArray);
+		
+	}
+}
+	
+
+

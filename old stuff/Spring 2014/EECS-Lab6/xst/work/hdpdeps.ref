@@ -1,0 +1,7 @@
+V3 3
+FL //fileserver.eecs.ku.edu/raviles/EECS-Lab6/Lab6.vhd 2015/03/04.09:31:24 J.36
+EN work/Lab6 1425483538 FL //fileserver.eecs.ku.edu/raviles/EECS-Lab6/Lab6.vhd \
+      PB ieee/std_logic_1164 1177545575 PB ieee/std_logic_arith 1177545576 \
+      PB ieee/STD_LOGIC_UNSIGNED 1177545583
+AR work/Lab6/Behavioral 1425483539 \
+      FL //fileserver.eecs.ku.edu/raviles/EECS-Lab6/Lab6.vhd EN work/Lab6 1425483538

@@ -1,0 +1,60 @@
+function GetMedian(intA, intB, intC, intD, intE, intF, intG ){
+var myArray = [];
+if (intA != null)
+{
+myArray[myArray.length] = intA;
+}
+if (intB != null)
+{
+myArray[myArray.length] = intB;
+} 
+if (intC != null)
+{
+myArray[myArray.length] = intC;
+}
+if (intD != null)
+{
+myArray[myArray.length] = intD;
+}
+if (intE != null)
+{
+myArray[myArray.length] = intE;
+}
+if (intF != null)
+{
+myArray[myArray.length] = intF;
+}
+if (intG != null)
+{
+myArray[myArray.length] = intG;
+}
+
+myArray.sort(function(a, b){return a-b});
+var half = Math.floor(myArray.length/2);
+
+if(myArray.length % 2)
+{
+Output(myArray[half]);
+}
+else
+{
+Output((myArray[half -1] + myArray[half])/2);
+}
+}
+
+var array = [];
+for( i=0; i<7;i++)
+{ 
+
+array[i] = parseInt(prompt("Get a value", "0"),"10");
+var c1 = prompt("c to calculate, I to enter another value","I")
+if (c1 == "c")
+{
+break;
+} else if(array.length == 7) {
+break
+}
+
+}
+
+GetMedian(array[0], array[1], array[2], array[3], array[4], array[5], array[6])

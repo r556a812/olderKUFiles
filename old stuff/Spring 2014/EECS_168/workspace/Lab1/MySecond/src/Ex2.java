@@ -1,0 +1,14 @@
+
+public class Ex2 {
+	public static void main(String[] args){
+		System.out.println("My name is Richard Aviles.");
+		System.out.println("I am an EECS major.");
+		System.out.println("My hobbies are:");
+		System.out.println("\tCoding");
+		System.out.println("\tBoard games");
+		System.out.println("\tWalking my dog");
+		System.out.println("\tCooking");
+		System.out.println("Goodbye");
+	}
+
+}

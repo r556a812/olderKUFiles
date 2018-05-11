@@ -1,0 +1,6 @@
+EN my_xor6_gate NULL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor6_gate.vhd sub00/vhpl04 1427297566
+AR my_xor_gate behavioral //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor_gate.vhd sub00/vhpl01 1427297563
+AR my_xor6_gate structural //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor6_gate.vhd sub00/vhpl05 1427297567
+EN my_xor3_gate NULL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor3_gate.vhd sub00/vhpl02 1427297564
+EN my_xor_gate NULL //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor_gate.vhd sub00/vhpl00 1427297562
+AR my_xor3_gate structural //fileserver.eecs.ku.edu/raviles/EECS140Lab8/my_xor3_gate.vhd sub00/vhpl03 1427297565

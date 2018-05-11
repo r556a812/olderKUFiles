@@ -1,0 +1,25 @@
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+netgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -ar Structure -tm toplevel -w -dir netgen/synthesis -ofmt vhdl -sim toplevel.ngc toplevel_synthesis.vhd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+netgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -ar Structure -tm toplevel -w -dir netgen/synthesis -ofmt vhdl -sim toplevel.ngc toplevel_synthesis.vhd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+netgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -ar Structure -tm toplevel -w -dir netgen/synthesis -ofmt vhdl -sim toplevel.ngc toplevel_synthesis.vhd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+xst -ise "H:/Lab9/Lab9.ise" -intstyle ise -ifn toplevel.xst -ofn toplevel.syr
+netgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -ar Structure -tm toplevel -w -dir netgen/synthesis -ofmt vhdl -sim toplevel.ngc toplevel_synthesis.vhd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+map -ise "H:/Lab9/Lab9.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr b -k 4 -c 100 -o toplevel_map.ncd toplevel.ngd toplevel.pcf
+par -ise "H:/Lab9/Lab9.ise" -w -intstyle ise -ol std -t 1 toplevel_map.ncd toplevel.ncd toplevel.pcf
+trce -ise "H:/Lab9/Lab9.ise" -intstyle ise -e 3 -s 4 -xml toplevel toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf
+bitgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -f toplevel.ut toplevel.ncd
+ngdbuild -ise "H:/Lab9/Lab9.ise" -intstyle ise -dd _ngo -nt timestamp -uc "toplevel.ucf" -p xc3s500e-fg320-4 "toplevel.ngc" toplevel.ngd
+map -ise "H:/Lab9/Lab9.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr b -k 4 -c 100 -o toplevel_map.ncd toplevel.ngd toplevel.pcf
+par -ise "H:/Lab9/Lab9.ise" -w -intstyle ise -ol std -t 1 toplevel_map.ncd toplevel.ncd toplevel.pcf
+trce -ise "H:/Lab9/Lab9.ise" -intstyle ise -e 3 -s 4 -xml toplevel toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf
+bitgen -ise "H:/Lab9/Lab9.ise" -intstyle ise -f toplevel.ut toplevel.ncd

@@ -1,0 +1,49 @@
+V3 38
+FL H:/Lab10/ADDer.vhd 2015/04/08.10:08:35 J.36
+EN work/ADDer 1428505898 FL H:/Lab10/ADDer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/ADDer/Structural 1428505899 \
+      FL H:/Lab10/ADDer.vhd EN work/ADDer 1428505898 CP bit_full_adder
+FL H:/Lab10/ANDer.vhd 2015/04/08.10:09:48 J.36
+EN work/ANDer 1428505892 FL H:/Lab10/ANDer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/ANDer/Behavioral 1428505893 \
+      FL H:/Lab10/ANDer.vhd EN work/ANDer 1428505892
+FL H:/Lab10/display_driver.vhd 2015/04/08.10:09:17 J.36
+EN work/display_driver 1428505906 FL H:/Lab10/display_driver.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/display_driver/Behavioral 1428505907 \
+      FL H:/Lab10/display_driver.vhd EN work/display_driver 1428505906
+FL H:/Lab10/function_select.vhd 2015/04/08.10:07:45 J.36
+EN work/function_select 1428505904 FL H:/Lab10/function_select.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/function_select/Procedural 1428505905 \
+      FL H:/Lab10/function_select.vhd EN work/function_select 1428505904
+FL H:/Lab10/LEDdisplay.vhd 2015/04/08.10:04:35 J.36
+EN work/Mux4by7 1428505900 FL H:/Lab10/LEDdisplay.vhd PB ieee/std_logic_1164 1179176983 \
+      LB UNISIM PH unisim/VCOMPONENTS 1179177362
+AR work/Mux4by7/procedural 1428505901 \
+      FL H:/Lab10/LEDdisplay.vhd EN work/Mux4by7 1428505900 CP MUXF5 CP MUXF6
+EN work/LEDdisplay 1428505902 \
+      FL H:/Lab10/LEDdisplay.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991 LB UNISIM PH unisim/VCOMPONENTS 1179177362
+AR work/LEDdisplay/structural 1428505903 \
+      FL H:/Lab10/LEDdisplay.vhd EN work/LEDdisplay 1428505902 CP Mux4by7
+FL H:/Lab10/ORer.vhd 2015/04/08.10:05:35 J.36
+EN work/ORer 1428505894 FL H:/Lab10/ORer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/ORer/Behavioral 1428505895 \
+      FL H:/Lab10/ORer.vhd EN work/ORer 1428505894
+FL H:/Lab10/toplevel.vhd 2015/04/08.10:11:03 J.36
+EN work/toplevel 1428505908 FL H:/Lab10/toplevel.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/toplevel/Behavioral 1428505909 \
+      FL H:/Lab10/toplevel.vhd EN work/toplevel 1428505908 CP ANDer CP ORer CP XORer \
+      CP ADDer CP LEDdisplay CP function_select CP display_driver
+FL H:/Lab10/XORer.vhd 2015/04/08.10:06:31 J.36
+EN work/XORer 1428505896 FL H:/Lab10/XORer.vhd PB ieee/std_logic_1164 1179176983 \
+      PB ieee/std_logic_arith 1179176985 PB ieee/STD_LOGIC_UNSIGNED 1179176991
+AR work/XORer/Behavioral 1428505897 \
+      FL H:/Lab10/XORer.vhd EN work/XORer 1428505896

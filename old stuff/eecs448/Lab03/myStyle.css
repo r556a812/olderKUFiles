@@ -1,0 +1,40 @@
+body
+{
+	
+	background-color: #000080;
+	background-image: url(md.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+p
+{
+	color: #00b386;
+	font-variant: small-caps;
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+p.links
+{
+	color:#00b386;
+	background-color: none;
+	font-variant: small-caps;
+	font-family: monospace;
+	font-size: 1.5em;
+	text-align: center;
+	
+}
+
+h1
+{
+	color: black;
+	font-size: 2.5em;
+}
+
+a
+{
+	color:#00b386;
+	background-color: black;
+}
+

@@ -1,0 +1,31 @@
+Release 9.2i ngdbuild J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx92i\bin\nt\ngdbuild.exe -ise
+H:/EECS140Lab8/EECS140Lab8.ise -intstyle ise -dd _ngo -nt timestamp -uc
+lab8Pins.ucf -p xc3s500e-fg320-4 my_xor6_gate.ngc my_xor6_gate.ngd
+
+Reading NGO file "H:/EECS140Lab8/my_xor6_gate.ngc" ...
+
+Applying constraints in "lab8Pins.ucf" to the design...
+
+Checking timing specifications ...
+Checking Partitions ...
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 108852 kilobytes
+
+Writing NGD file "my_xor6_gate.ngd" ...
+
+Writing NGDBUILD log file "my_xor6_gate.bld"...

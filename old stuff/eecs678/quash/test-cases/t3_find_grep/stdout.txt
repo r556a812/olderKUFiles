@@ -1,0 +1,11 @@
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir1/lorem_ipsum.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir1/valgrind_expected.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir2/test1.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir2/test2.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir2/test3.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir3/dir3-1/lorem_ipsum.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir3/dir3-1/valgrind_expected.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/dir3/valgrind_expected.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/lorem_ipsum.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/.valgrind_expected.txt
+/home/raviles/eecs678/quash/test-cases/t3_find_grep/sandbox/valgrind_expected.txt

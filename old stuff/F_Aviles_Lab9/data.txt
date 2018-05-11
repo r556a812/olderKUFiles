@@ -1,0 +1,193 @@
+n = 50000
+
+Build                                       
+
+1 leftistHeap: 0.005241 secs                        
+  skewHeap: 0.004341 secs
+  
+2 leftistHeap: 0.005191 secs
+  skewHeap: 0.004315 secs
+  
+3 leftistHeap: 0.005210 secs
+  skewHeap: 0.004318 secs
+  
+4 leftistHeap: 0.005204 secs
+  skewHeap: 0.004303 secs
+  
+5 leftistHeap: 0.005015 secs
+  skewHeap: 0.004160 secs
+  
+Avg
+
+leftistHeap: 0.0051722
+skewHeap: 0.0042874
+
+
+Delete/Insert
+
+1 leftistHeap: 0.000693 secs                        
+  skewHeap: 0.000528 secs
+  
+2 leftistHeap: 0.000639 secs
+  skewHeap: 0.000490 secs
+  
+3 leftistHeap: 0.000601 secs
+  skewHeap: 0.000459 secs
+  
+4 leftistHeap: 0.000670 secs
+  skewHeap: 0.000513 secs
+  
+5 leftistHeap: 0.000595 secs
+  skewHeap: 0.000446 secs
+  
+Avg
+
+leftistHeap: 0.0006396
+skewHeap: 0.0004872
+
+----------------------------------------
+
+n = 100000
+
+Build                                       
+
+1 leftistHeap: 0.010004 secs                        
+  skewHeap: 0.008314 secs
+  
+2 leftistHeap: 0.010021 secs
+  skewHeap: 0.008306 secs
+  
+3 leftistHeap: 0.010021 secs
+  skewHeap: 0.008319 secs
+  
+4 leftistHeap: 0.010006 secs
+  skewHeap: 0.008310 secs
+  
+5 leftistHeap: 0.010026 secs
+  skewHeap: 0.008302 secs
+  
+Avg
+
+leftistHeap: 0.0100156
+skewHeap: 0.0083102
+
+
+Delete/Insert
+
+1 leftistHeap: 0.001269 secs                        
+  skewHeap: 0.000960 secs
+  
+2 leftistHeap: 0.001293 secs
+  skewHeap: 0.000973 secs
+  
+3 leftistHeap: 0.001284 secs
+  skewHeap: 0.000971 secs
+  
+4 leftistHeap: 0.001167 secs
+  skewHeap: 0.000875 secs
+  
+5 leftistHeap: 0.001351 secs
+  skewHeap: 0.001030 secs
+  
+Avg
+
+leftistHeap: 0.0012728
+skewHeap: 0.0009618
+
+--------------------------------------
+
+n = 200000
+
+Build                                       
+
+1 leftistHeap: 0.020020 secs                        
+  skewHeap: 0.016605 secs
+  
+2 leftistHeap: 0.020035 secs
+  skewHeap: 0.016645 secs
+  
+3 leftistHeap: 0.020083 secs
+  skewHeap: 0.016624 secs
+  
+4 leftistHeap: 0.020012 secs
+  skewHeap: 0.016627 secs
+  
+5 leftistHeap: 0.020023 secs
+  skewHeap: 0.016609 secs
+  
+Avg
+
+leftistHeap: 0.0200346
+skewHeap: 0.016622
+
+
+Delete/Insert
+
+1 leftistHeap: 0.002616 secs                        
+  skewHeap: 0.001982 secs
+  
+2 leftistHeap: 0.002762 secs
+  skewHeap: 0.002093 secs
+  
+3 leftistHeap: 0.002738 secs
+  skewHeap: 0.002076 secs
+  
+4 leftistHeap: 0.002654 secs
+  skewHeap: 0.001999 secs
+  
+5 leftistHeap: 0.002638 secs
+  skewHeap: 0.001970 secs
+  
+Avg
+
+leftistHeap: 0.0026816
+skewHeap: 0.002024
+
+-------------------------------------
+
+n = 400000
+
+Build                                       
+
+1 leftistHeap: 0.040083 secs                        
+  skewHeap: 0.033267 secs
+  
+2 leftistHeap: 0.040106 secs
+  skewHeap: 0.033252 secs
+  
+3 leftistHeap: 0.040060 secs
+  skewHeap: 0.033261 secs
+  
+4 leftistHeap: 0.040047 secs
+  skewHeap: 0.033236 secs
+  
+5 leftistHeap: 0.040118 secs
+  skewHeap: 0.033233 secs
+  
+Avg
+
+leftistHeap: 0.0400828
+skewHeap: 0.0332498
+
+
+Delete/Insert
+
+1 leftistHeap: 0.005284 secs                        
+  skewHeap: 0.003978 secs
+  
+2 leftistHeap: 0.005367 secs
+  skewHeap: 0.004052 secs
+  
+3 leftistHeap: 0.005483 secs
+  skewHeap: 0.004171 secs
+  
+4 leftistHeap: 0.005306 secs
+  skewHeap: 0.003991 secs
+  
+5 leftistHeap: 0.005317 secs
+  skewHeap: 0.004057 secs
+  
+Avg
+
+leftistHeap: 0.0053514
+skewHeap: 0.0040498

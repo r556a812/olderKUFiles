@@ -1,0 +1,128 @@
+--------------------------------------------------------------------------------
+Release 9.2i Trace 
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx92i\bin\nt\trce.exe -ise H:/Lab10/Lab10.ise -intstyle ise -e 3 -s 4
+-xml toplevel toplevel.ncd -o toplevel.twr toplevel.pcf -ucf toplevel.ucf
+
+Design file:              toplevel.ncd
+Physical constraint file: toplevel.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.26 2007-04-13)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.827|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+control<0>     |segments<0>    |   12.292|
+control<0>     |segments<1>    |   11.756|
+control<0>     |segments<2>    |   12.096|
+control<0>     |segments<3>    |   13.004|
+control<0>     |segments<4>    |   12.587|
+control<0>     |segments<5>    |   11.661|
+control<0>     |segments<6>    |   11.549|
+control<1>     |segments<0>    |   11.608|
+control<1>     |segments<1>    |   11.072|
+control<1>     |segments<2>    |   11.412|
+control<1>     |segments<3>    |   12.320|
+control<1>     |segments<4>    |   11.903|
+control<1>     |segments<5>    |   10.977|
+control<1>     |segments<6>    |   10.865|
+switches<0>    |segments<0>    |   12.807|
+switches<0>    |segments<1>    |   12.030|
+switches<0>    |segments<2>    |   12.327|
+switches<0>    |segments<3>    |   12.977|
+switches<0>    |segments<4>    |   12.517|
+switches<0>    |segments<5>    |   12.176|
+switches<0>    |segments<6>    |   12.064|
+switches<1>    |segments<0>    |   12.210|
+switches<1>    |segments<1>    |   11.433|
+switches<1>    |segments<2>    |   11.730|
+switches<1>    |segments<3>    |   12.380|
+switches<1>    |segments<4>    |   11.920|
+switches<1>    |segments<5>    |   11.579|
+switches<1>    |segments<6>    |   11.467|
+switches<2>    |segments<0>    |   12.145|
+switches<2>    |segments<1>    |   11.368|
+switches<2>    |segments<2>    |   11.665|
+switches<2>    |segments<3>    |   12.315|
+switches<2>    |segments<4>    |   11.855|
+switches<2>    |segments<5>    |   11.514|
+switches<2>    |segments<6>    |   11.402|
+switches<3>    |segments<0>    |   11.650|
+switches<3>    |segments<1>    |   10.873|
+switches<3>    |segments<2>    |   11.170|
+switches<3>    |segments<3>    |   11.820|
+switches<3>    |segments<4>    |   11.360|
+switches<3>    |segments<5>    |   11.019|
+switches<3>    |segments<6>    |   10.907|
+switches<4>    |segments<0>    |   13.153|
+switches<4>    |segments<1>    |   12.376|
+switches<4>    |segments<2>    |   12.673|
+switches<4>    |segments<3>    |   13.323|
+switches<4>    |segments<4>    |   12.863|
+switches<4>    |segments<5>    |   12.522|
+switches<4>    |segments<6>    |   12.410|
+switches<5>    |segments<0>    |   13.216|
+switches<5>    |segments<1>    |   12.439|
+switches<5>    |segments<2>    |   12.736|
+switches<5>    |segments<3>    |   13.386|
+switches<5>    |segments<4>    |   12.926|
+switches<5>    |segments<5>    |   12.585|
+switches<5>    |segments<6>    |   12.473|
+switches<6>    |segments<0>    |   12.311|
+switches<6>    |segments<1>    |   11.534|
+switches<6>    |segments<2>    |   11.831|
+switches<6>    |segments<3>    |   12.481|
+switches<6>    |segments<4>    |   12.021|
+switches<6>    |segments<5>    |   11.680|
+switches<6>    |segments<6>    |   11.568|
+switches<7>    |segments<0>    |   12.108|
+switches<7>    |segments<1>    |   11.331|
+switches<7>    |segments<2>    |   11.628|
+switches<7>    |segments<3>    |   12.278|
+switches<7>    |segments<4>    |   11.818|
+switches<7>    |segments<5>    |   11.477|
+switches<7>    |segments<6>    |   11.365|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Apr 08 10:31:50 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 134 MB
+
+
+

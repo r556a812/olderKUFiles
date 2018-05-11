@@ -1,0 +1,7 @@
+
+**** Build of configuration Debug for project EECS_388_P5 ****
+
+"C:\\TI_CodeComposer\\ccsv6\\utils\\bin\\gmake" -k -j 8 all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
